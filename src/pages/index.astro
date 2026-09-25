@@ -1,11 +1,15 @@
 ---
-import { Image, Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
+import HeroGorsel from '../components/HeroGorsel.astro';
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import HizmetKarti from '../components/HizmetKarti.astro';
 import IletisimBolumu from '../components/IletisimBolumu.astro';
 import Sss from '../components/Sss.astro';
 import hero from '../assets/img/anasayfa-hero.jpg';
+import heroMobil from '../assets/img/anasayfa-hero-mobil.jpg';
+import hero2 from '../assets/img/anasayfa-hero-2.jpg';
+import hero2Mobil from '../assets/img/anasayfa-hero-2-mobil.jpg';
 import dokuLacivert from '../assets/img/doku-lacivert.jpg';
 import dokuTurkuaz from '../assets/img/doku-turkuaz.jpg';
 import { site, tecrubeYili, kategoriSirasi, kategoriBaslik } from '../data/site';
@@ -53,33 +57,70 @@ const schema = [
   aciklama={`İstanbul'da evde fizik tedavi ve rehabilitasyon. ${site.kurulusYili}'dan beri uzman fizyoterapistlerle evinizde tedavi. Ücretsiz ilk muayene için arayın.`}
   schema={schema}
 >
-  <section class="hero">
-    <Picture
-      src={hero}
-      alt="Fizyoterapist, evinde yaşlı bir hastaya dambılla egzersiz yaptırıyor"
-      formats={['avif', 'webp']}
-      widths={[480, 800, 1200, 1600, 1920]}
-      sizes="100vw"
-      quality={60}
-      loading="eager"
-      fetchpriority="high"
-      class="hero-gorsel"
-    />
-    <div class="kap hero-ic">
-      <h1>İstanbul'da Evde Fizik Tedavi</h1>
-      <div class="serit-kisa" aria-hidden="true"><span></span><span></span><span></span></div>
-      <p class="hero-metin">Bia Sağlık olarak, evde fizik tedavi hizmetiyle sağlığınıza evinizin konforunda kavuşmanızı sağlıyoruz. Uzman ekibimiz, size özel tedavi planlarıyla iyileşme sürecinizi destekliyor.</p>
-      <div class="hero-btn">
-        <a href="/iletisim#randevu" class="btn btn-turkuaz">Ücretsiz İlk Muayene</a>
-        <a href={site.telefonLink} class="btn btn-beyaz">{site.telefon}</a>
+  <section class="hero" id="hero" aria-roledescription="carousel" aria-label="Öne çıkanlar" data-aktif="0">
+    <div class="hero-arka">
+      <HeroGorsel masaustu={hero} mobil={heroMobil} alt="Fizyoterapist, evinde yaşlı bir hastaya dambılla egzersiz yaptırıyor" oncelikli class="hero-gorsel" />
+      <!-- 2. slaytın görseli sayfa yüklendikten sonra eklenir; açılış hızını etkilemez -->
+      <template id="hero-2-gorsel">
+        <HeroGorsel masaustu={hero2} mobil={hero2Mobil} alt="Fizyoterapist, yaşlı bir hastanın elini şefkatle tutuyor" class="hero-gorsel" />
+      </template>
+    </div>
+    <div class="hero-slaytlar">
+      <div class="kap hero-ic" role="group" aria-roledescription="slide" aria-label="1 / 2">
+        <h1>İstanbul'da Evde Fizik Tedavi</h1>
+        <div class="serit-kisa" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="hero-metin">Bia Sağlık olarak, evde fizik tedavi hizmetiyle sağlığınıza evinizin konforunda kavuşmanızı sağlıyoruz. Uzman ekibimiz, size özel tedavi planlarıyla iyileşme sürecinizi destekliyor.</p>
+        <div class="hero-btn">
+          <a href="/iletisim#randevu" class="btn btn-turkuaz">Ücretsiz İlk Muayene</a>
+          <a href={site.telefonLink} class="btn btn-beyaz">{site.telefon}</a>
+        </div>
+      </div>
+      <div class="kap hero-ic" role="group" aria-roledescription="slide" aria-label="2 / 2" aria-hidden="true">
+        <p class="hero-baslik">Evde fizyoterapi ile daha iyi bir yaşam</p>
+        <div class="serit-kisa" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="hero-metin">Kişiselleştirilmiş tedavilerimiz ve uzman fizyoterapist kadromuzla size en uygun tedavi yöntemlerini sunuyor, iyileşme sürecinizde her adımda yanınızda oluyoruz.</p>
+        <div class="hero-btn">
+          <a href="/hizmetlerimiz" class="btn btn-turkuaz" tabindex="-1">Hizmetlerimiz</a>
+          <a href={site.whatsapp} class="btn btn-beyaz" rel="noopener" target="_blank" tabindex="-1">WhatsApp'tan yazın</a>
+        </div>
       </div>
     </div>
+    <button class="hero-ok hero-geri" type="button" aria-label="Önceki slayt" hidden><svg viewBox="0 0 21 41" aria-hidden="true"><path d="M20.3 40.8 0 20.5 20.3.2l.7.7L1.3 20.5 21 40.1z"/></svg></button>
+    <button class="hero-ok hero-ileri" type="button" aria-label="Sonraki slayt" hidden><svg viewBox="0 0 21 41" aria-hidden="true"><path d="M.7 40.8 21 20.5.7.2 0 .9l19.7 19.6L0 40.1z"/></svg></button>
     <ul class="kap hero-kutular">
       <li><span>Uzman</span> <strong>Terapistler</strong></li>
       <li><span>Kişiselleştirilmiş</span> <strong>Programlar</strong></li>
       <li><span>Evde</span> <strong>Fizik Tedavi</strong></li>
     </ul>
   </section>
+  <script is:inline>
+    (function () {
+      var h = document.getElementById('hero'); if (!h) return;
+      var slaytlar = h.querySelectorAll('.hero-ic'), n = slaytlar.length, i = 0, zaman;
+      var sakin = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function goster(k) {
+        i = (k + n) % n; h.setAttribute('data-aktif', i);
+        slaytlar.forEach(function (s, j) {
+          s.setAttribute('aria-hidden', j !== i);
+          s.querySelectorAll('a').forEach(function (a) { a.tabIndex = j === i ? 0 : -1; });
+        });
+      }
+      function baslat() { if (!sakin) { clearInterval(zaman); zaman = setInterval(function () { goster(i + 1); }, 6000); } }
+      function hazirla() {
+        var t = document.getElementById('hero-2-gorsel');
+        h.querySelector('.hero-arka').appendChild(t.content.cloneNode(true));
+        h.querySelectorAll('.hero-ok').forEach(function (b) { b.hidden = false; });
+        h.querySelector('.hero-geri').onclick = function () { goster(i - 1); baslat(); };
+        h.querySelector('.hero-ileri').onclick = function () { goster(i + 1); baslat(); };
+        h.addEventListener('mouseenter', function () { clearInterval(zaman); });
+        h.addEventListener('mouseleave', baslat);
+        h.addEventListener('focusin', function () { clearInterval(zaman); });
+        baslat();
+      }
+      if (document.readyState === 'complete') setTimeout(hazirla, 1200);
+      else addEventListener('load', function () { setTimeout(hazirla, 1200); });
+    })();
+  </script>
 
   <section class="bolum">
     <div class="kap dar ortala">
@@ -159,9 +200,27 @@ const schema = [
 
 <style>
   .hero { position: relative; color: #fff; background: var(--indigo); overflow: hidden; }
-  .hero :global(.hero-gorsel) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 30%; }
+  .hero-arka { position: absolute; inset: 0; }
+  .hero-arka :global(picture) { position: absolute; inset: 0; transition: opacity .9s ease; }
+  .hero-arka :global(.hero-gorsel) { width: 100%; height: 100%; object-fit: cover; object-position: 60% 35%; }
+  .hero-arka :global(picture:nth-of-type(2)) { opacity: 0; }
+  .hero[data-aktif="1"] .hero-arka :global(picture:nth-of-type(1)) { opacity: 0; }
+  .hero[data-aktif="1"] .hero-arka :global(picture:nth-of-type(2)) { opacity: 1; }
+  .hero-slaytlar { position: relative; z-index: 2; display: grid; }
+  .hero-slaytlar > .hero-ic { grid-area: 1 / 1; transition: opacity .6s ease, visibility .6s; }
+  .hero-slaytlar > .hero-ic:nth-child(2) { opacity: 0; visibility: hidden; }
+  .hero[data-aktif="1"] .hero-slaytlar > .hero-ic:nth-child(1) { opacity: 0; visibility: hidden; }
+  .hero[data-aktif="1"] .hero-slaytlar > .hero-ic:nth-child(2) { opacity: 1; visibility: visible; }
+  .hero-baslik { font: 700 clamp(2rem, 5vw, 3.2rem)/1.2 var(--baslik-font); color: #fff; max-width: 16ch; margin: 0 0 .6em; text-transform: uppercase; letter-spacing: .04em; }
+  .hero-ok { position: absolute; z-index: 3; top: 45%; transform: translateY(-50%); width: 48px; height: 64px; display: grid; place-items: center; background: none; border: 0; cursor: pointer; color: #fff; opacity: .85; }
+  .hero-ok[hidden] { display: none; }
+  .hero-ok:hover, .hero-ok:focus-visible { opacity: 1; }
+  .hero-ok svg { width: 22px; height: 42px; fill: currentColor; }
+  .hero-geri { left: 16px; }
+  .hero-ileri { right: 16px; }
+  @media (max-width: 1280px) { .hero-ok { display: none; } }
   .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgb(73 82 160 / .88), rgb(81 93 172 / .62) 60%, rgb(81 93 172 / .35)); z-index: 1; }
-  .hero-ic { position: relative; z-index: 2; padding-block: clamp(56px, 11vw, 130px) clamp(36px, 6vw, 60px); }
+  .hero-ic { position: relative; padding-block: clamp(56px, 11vw, 130px) clamp(36px, 6vw, 60px); }
   .hero h1 { color: #fff; max-width: 14ch; letter-spacing: .01em; }
   .hero-metin { max-width: 560px; font-size: clamp(1.02rem, 2vw, 1.2rem); }
   .hero-btn { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }

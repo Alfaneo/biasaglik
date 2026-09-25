@@ -1,0 +1,47 @@
+---
+// Hero görseli: mobilde dikey kırpılmış, masaüstünde yatay sürüm (art direction).
+// Her ikisi de AVIF + WebP; tarayıcı yalnızca ekrana uygun olanı indirir.
+import { getImage } from 'astro:assets';
+
+interface Props {
+  masaustu: ImageMetadata;
+  mobil: ImageMetadata;
+  alt: string;
+  oncelikli?: boolean;
+  class?: string;
+}
+const { masaustu, mobil, alt, oncelikli = false, class: sinif } = Astro.props;
+
+const MOBIL = '(max-width: 699px)';
+const kaynak = async (src: ImageMetadata, genislikler: number[], format: 'avif' | 'webp', kalite: number) =>
+  (await Promise.all(genislikler.map((w) => getImage({ src, width: w, format, quality: kalite }))))
+    .map((g, i) => `${g.src} ${genislikler[i]}w`)
+    .join(', ');
+
+const mobilGenislik = [480, 720, 960, 1080].filter((w) => w <= mobil.width);
+const masaustuGenislik = [800, 1200, 1600, 1920].filter((w) => w <= masaustu.width);
+
+const [mAvif, mWebp, dAvif, dWebp] = await Promise.all([
+  kaynak(mobil, mobilGenislik, 'avif', 55),
+  kaynak(mobil, mobilGenislik, 'webp', 65),
+  kaynak(masaustu, masaustuGenislik, 'avif', 60),
+  kaynak(masaustu, masaustuGenislik, 'webp', 70),
+]);
+const yedek = await getImage({ src: masaustu, width: 1200, format: 'jpg', quality: 70 });
+---
+<picture>
+  <source media={MOBIL} type="image/avif" srcset={mAvif} sizes="100vw" />
+  <source media={MOBIL} type="image/webp" srcset={mWebp} sizes="100vw" />
+  <source type="image/avif" srcset={dAvif} sizes="100vw" />
+  <source type="image/webp" srcset={dWebp} sizes="100vw" />
+  <img
+    src={yedek.src}
+    alt={alt}
+    width={masaustu.width}
+    height={masaustu.height}
+    class={sinif}
+    decoding="async"
+    loading={oncelikli ? 'eager' : 'lazy'}
+    fetchpriority={oncelikli ? 'high' : undefined}
+  />
+</picture>
