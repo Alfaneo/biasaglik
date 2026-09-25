@@ -53,16 +53,34 @@ Boş bırakılan bölüm sayfada hiç görünmez. Tam örnek: [`src/content/hizm
 ## İçerik güncelleme (admin paneli yok)
 
 1. `src/content/hizmetler/<sayfa>.md` dosyasını düzenle (GitHub'da kalem ikonu da olur).
-2. Commit → push. Cloudflare Pages siteyi ~1 dakikada yeniden yayınlar.
+2. Commit → push. Cloudflare Pages kullanılıyorsa site ~1 dakikada kendiliğinden yenilenir; Hostinger'da `dist/` yeniden yüklenir.
 
 `seoBaslik` en fazla 65, `aciklama` 70–160, `kisaAciklama` 20–140 karakter olmalı; kurala uymayan dosyada derleme hata verir.
 
-## Yayına alma (Cloudflare Pages)
+## Yayına alma
+
+Site derlendiğinde `dist/` klasöründe hazır HTML dosyaları oluşur; herhangi bir statik barındırmada çalışır.
+Yönlendirme ve önbellek ayarları iki biçimde hazır:
+- **Hostinger / Apache / LiteSpeed:** `public/.htaccess` ve `public/_astro/.htaccess`
+- **Cloudflare Pages / Netlify:** `public/_redirects` ve `public/_headers`
+
+### Seçenek A: Hostinger
+
+1. `npm run build` çalıştır.
+2. hPanel → Dosya Yöneticisi → `public_html` klasörünü boşalt (Wix'ten taşınıyorsa zaten boştur).
+3. `dist/` klasörünün **içindekileri** (`.htaccess` dahil; gizli dosyaları göster) `public_html`'e yükle.
+4. hPanel → Güvenlik → SSL: ücretsiz SSL'i etkinleştir.
+5. Domain DNS'ini Hostinger'a yönlendir (Wix'teki domain ayarlarından nameserver değişikliği).
+6. Kontrol: `/elektro-terapi` açılmalı, `/elektro-terapi.html` ve `/kuru-ıgneleme` 301 ile yeni adrese gitmeli.
+
+Her içerik güncellemesinde 1 ve 3. adımlar tekrarlanır. Bunu otomatikleştirmek için GitHub Actions + FTP kurulabilir.
+
+### Seçenek B: Cloudflare Pages
 
 1. Cloudflare → Workers & Pages → Create → Pages → bu GitHub reposunu bağla.
 2. Build command: `npm run build` · Output: `dist`.
 3. Custom domain: `www.biasaglik.com.tr` (ve `biasaglik.com.tr` → www yönlendirmesi).
-4. Domain DNS'i Cloudflare'e yönlendirildiğinde Wix aboneliği kapatılabilir.
+4. Her `git push` sonrası site otomatik yeniden yayınlanır.
 
 ## Performans kuralları
 
