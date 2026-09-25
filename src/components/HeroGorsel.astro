@@ -18,14 +18,15 @@ const kaynak = async (src: ImageMetadata, genislikler: number[], format: 'avif' 
     .map((g, i) => `${g.src} ${genislikler[i]}w`)
     .join(', ');
 
-const mobilGenislik = [480, 720, 960, 1080].filter((w) => w <= mobil.width);
+const mobilGenislik = [480, 600, 720].filter((w) => w <= mobil.width);
 const masaustuGenislik = [800, 1200, 1600, 1920].filter((w) => w <= masaustu.width);
 
 const [mAvif, mWebp, dAvif, dWebp] = await Promise.all([
-  kaynak(mobil, mobilGenislik, 'avif', 55),
-  kaynak(mobil, mobilGenislik, 'webp', 65),
-  kaynak(masaustu, masaustuGenislik, 'avif', 60),
-  kaynak(masaustu, masaustuGenislik, 'webp', 70),
+  // Görsel %43 opaklıkla lacivert örtünün altında durduğu için yüksek sıkıştırma gözle fark edilmez
+  kaynak(mobil, mobilGenislik, 'avif', 35),
+  kaynak(mobil, mobilGenislik, 'webp', 45),
+  kaynak(masaustu, masaustuGenislik, 'avif', 45),
+  kaynak(masaustu, masaustuGenislik, 'webp', 55),
 ]);
 const yedek = await getImage({ src: masaustu, width: 1200, format: 'jpg', quality: 70 });
 ---
