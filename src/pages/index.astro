@@ -67,7 +67,7 @@ const schema = [
     </div>
     <div class="hero-slaytlar">
       <div class="hero-ic" role="group" aria-roledescription="slide" aria-label="1 / 2">
-        <h1 class="hero-baslik">Evde Fizik Tedavi</h1>
+        <h1 class="hero-baslik"><span class="hero-ust">İstanbul'da</span> Evde Fizik Tedavi</h1>
         <div class="hero-serit" aria-hidden="true"><span></span><span></span><span></span></div>
         <p class="hero-metin">Bia Sağlık olarak, evde fizik tedavi hizmetiyle sağlığınıza evinizin konforunda kavuşmanızı sağlıyoruz. Uzman ekibimiz, sizin için özel olarak tasarlanmış tedavi planlarıyla, iyileşme sürecinizi destekliyor ve size en iyi sonuçları sunuyor.</p>
       </div>
@@ -206,6 +206,9 @@ const schema = [
   .hero[data-aktif="1"] .hero-ic-2 { opacity: 1; visibility: visible; }
   .hero-baslik { font: 700 55px/73px var(--baslik-font); letter-spacing: .05em; color: #fff; margin: 0; }
   .hero-ic-2 .hero-baslik { text-transform: uppercase; max-width: 720px; }
+  /* H1'deki 'İstanbul'da' — başlığın üstünde küçük etiket; büyük başlığın yeri Wix'teki gibi kalır */
+  .hero-baslik { position: relative; }
+  .hero-ust { position: absolute; left: 0; bottom: 100%; margin-bottom: 6px; font: 700 18px/1 var(--baslik-font); letter-spacing: .25em; text-transform: uppercase; color: #6bd0d4; white-space: nowrap; }
   .hero-serit { display: flex; margin: 13px 0 21px; }
   .hero-serit span { display: block; width: 156px; height: 13px; }
   .hero-serit span:nth-child(1) { background: #404040; margin-right: 3px; }
@@ -237,6 +240,7 @@ const schema = [
     .hero-ic { padding-top: calc(var(--u) * 47); }
     .hero-baslik { font-size: calc(var(--u) * 21); line-height: 1.35; letter-spacing: .05em; }
     .hero-ic-2 .hero-baslik { max-width: none; }
+    .hero-ust { font-size: calc(var(--u) * 10); margin-bottom: calc(var(--u) * 5); }
     .hero-serit { display: none; }
     .hero-metin { font-family: var(--govde-font); font-size: calc(var(--u) * 16); line-height: calc(var(--u) * 22.4); max-width: none; margin-top: calc(var(--u) * 24); }
     .hero-ok { display: none; }

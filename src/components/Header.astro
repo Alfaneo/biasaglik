@@ -1,24 +1,27 @@
 ---
+// Wix header'ının birebir karşılığı (masaüstü 135px: 50px üst çubuk + 85px menü; mobil 320px düzeni ölçekli)
 import { Image } from 'astro:assets';
 import logo from '../assets/img/logo.png';
 import Ikon from './Ikon.astro';
 import { site, menu } from '../data/site';
 
-const yol = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+const yol = Astro.url.pathname.replace(/\.html$/, '').replace(/\/(index)?$/, '') || '/';
 const aktif = (url: string) => (url === '/' ? yol === '/' : yol.startsWith(url));
+const telefonYazi = site.telefon.replace(/[()]/g, ''); // Wix'teki gibi: +90 538 700 13 74
 ---
-<div class="ustbar">
-  <div class="kap ustbar-ic">
-    <a href={`mailto:${site.eposta}`} class="ust-eposta"><Ikon ad="eposta" /> <span>{site.eposta}</span></a>
-    <a href={site.telefonLink}><Ikon ad="telefon" /> <span>{site.telefon}</span></a>
-    <a href={site.whatsapp} rel="noopener" target="_blank"><Ikon ad="whatsapp" /> <span>WhatsApp</span></a>
-    <a href="/iletisim" class="ust-ulasin">Bize Ulaşın</a>
-  </div>
-</div>
 <header class="ust">
-  <div class="kap ust-ic">
+  <div class="ustbar">
+    <div class="ustbar-ic">
+      <a href={`mailto:${site.eposta}`} class="ub-oge ub-eposta" aria-label={`E-posta: ${site.eposta}`}><Ikon ad="eposta" boyut={26} /><span>{site.eposta}</span></a>
+      <a href={site.telefonLink} class="ub-oge ub-tel" aria-label={`Telefon: ${telefonYazi}`}><Ikon ad="telefon" boyut={26} /><span>{telefonYazi}</span></a>
+      <a href={site.whatsapp} class="ub-oge ub-wa" rel="noopener" target="_blank" aria-label={`WhatsApp: ${telefonYazi}`}><Ikon ad="whatsapp" boyut={26} /><span>{telefonYazi}</span></a>
+      <a href="/iletisim" class="ub-ulasin">Bize Ulaşın</a>
+      <a href="/iletisim#randevu" class="ub-cta-mobil">Ücretsiz İlk Muayene!</a>
+    </div>
+  </div>
+  <div class="menu-bar">
     <a href="/" class="logo" aria-label="Bia Sağlık anasayfa">
-      <Image src={logo} alt="Bia Sağlık — Evde Sağlık ve Fizik Tedavi Hizmetleri" width={180} densities={[1, 2]} quality={70} loading="eager" />
+      <Image src={logo} alt="Bia Sağlık — Evde Sağlık ve Fizik Tedavi Hizmetleri" width={258} densities={[1, 2]} quality={70} loading="eager" />
     </a>
     <nav class="masaustu-menu" aria-label="Ana menü">
       <ul>
@@ -26,44 +29,73 @@ const aktif = (url: string) => (url === '/' ? yol === '/' : yol.startsWith(url))
       </ul>
     </nav>
     <details class="mobil-menu">
-      <summary aria-label="Menüyü aç"><Ikon ad="menu" boyut={28} /></summary>
+      <summary aria-label="Menüyü aç"><span></span><span></span><span></span></summary>
       <nav aria-label="Mobil menü">
         <ul>
           {menu.map((m) => <li><a href={m.url} aria-current={aktif(m.url) ? 'page' : undefined}>{m.ad}</a></li>)}
         </ul>
       </nav>
     </details>
-    <a href="/iletisim#randevu" class="btn btn-mavi ust-cta">Ücretsiz İlk Muayene!</a>
   </div>
+  <a href="/iletisim#randevu" class="ust-cta">Ücretsiz İlk Muayene!</a>
 </header>
 
 <style>
-  .ustbar { background: var(--lacivert); color: #fff; font-size: .9rem; }
-  .ustbar-ic { display: flex; gap: 28px; align-items: center; min-height: 40px; }
-  .ustbar a { color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; }
-  .ustbar a:hover { color: var(--turkuaz); }
-  .ust-ulasin { margin-left: auto; }
-  .ust { background: #fff; border-bottom: 1px solid var(--cizgi); position: relative; z-index: 20; }
-  .ust-ic { display: flex; align-items: center; gap: 24px; min-height: 76px; }
-  .logo img { width: 180px; height: auto; }
-  .ust-cta { margin-left: auto; min-height: 42px; padding: 8px 20px; font-size: .95rem; border-radius: 4px; }
-  .mobil-menu { margin-left: auto; }
-  .mobil-menu summary { list-style: none; cursor: pointer; color: var(--lacivert); display: flex; padding: 10px; }
-  .mobil-menu summary::-webkit-details-marker { display: none; }
+  .ust { position: relative; z-index: 20; background: #fff; }
   .ust ul { list-style: none; margin: 0; padding: 0; }
-  .ust nav a { color: #222; text-decoration: none; font-size: .95rem; }
-  .ust nav a:hover, .ust nav a[aria-current] { color: var(--indigo); }
 
-  @media (max-width: 899px) {
-    .ustbar .ust-eposta, .ustbar .ust-ulasin, .ust .ust-cta, .masaustu-menu { display: none; }
-    .ustbar-ic { justify-content: center; gap: 20px; }
-    .logo img { width: 150px; }
-    .mobil-menu nav { position: absolute; left: 0; right: 0; top: 100%; background: #fff; box-shadow: var(--golge); padding: 8px 20px 16px; }
-    .mobil-menu li a { display: block; padding: 12px 0; border-bottom: 1px solid var(--cizgi); font-size: 1.05rem; }
+  /* ---------- Masaüstü (Wix 1440px ölçüleri) ---------- */
+  .ustbar { background: #273272; height: 50px; }
+  .ustbar-ic { position: relative; width: min(980px, 100% - 40px); height: 100%; margin: 0 auto; display: flex; align-items: center; }
+  .ustbar a { color: #fff; text-decoration: none; }
+  .ustbar a:hover { color: var(--turkuaz); }
+  .ub-oge { display: inline-flex; align-items: center; gap: 12px; font: 400 16px/1 RobotoWeb, var(--govde-font); }
+  .ub-oge :global(svg) { flex: none; }
+  .ub-eposta { margin-left: -44px; }
+  .ub-tel { margin-left: 39px; }
+  .ub-wa { margin-left: 43px; }
+  .ub-ulasin { position: absolute; right: -168px; font: 400 17px/1 RobotoWeb, var(--govde-font); }
+  .ub-cta-mobil { display: none; }
+
+  .menu-bar { position: relative; width: min(1262px, 100% - 40px); height: 85px; margin: 0 auto; display: flex; align-items: center; }
+  .logo { display: block; flex: none; }
+  .logo img { width: 258px; height: auto; }
+  .masaustu-menu { margin-left: 59px; }
+  .masaustu-menu ul { display: flex; }
+  .masaustu-menu li a { display: block; padding: 7px 23px; color: #000; text-decoration: none; font: 400 15px/19px RobotoWeb, var(--govde-font); }
+  .masaustu-menu li:nth-child(n+3) a { padding-inline: 22px; }
+  .masaustu-menu a:hover, .masaustu-menu a[aria-current] { color: #515dac; }
+  .ust-cta { position: absolute; right: 0; top: 54px; width: 207px; height: 29px; display: grid; place-items: center; background: #1579b3; color: #fff; text-decoration: none; font: 400 15px/1 var(--baslik-font); letter-spacing: .05em; }
+  .ust-cta:hover { background: #12679a; color: #fff; }
+  .mobil-menu { display: none; }
+
+  @media (max-width: 1300px) { .ub-ulasin { right: 0; } }
+  @media (max-width: 1180px) {
+    .ub-eposta { margin-left: 0; }
+    .menu-bar { padding-right: 217px; box-sizing: border-box; }
+    .logo img { width: 200px; }
+    .masaustu-menu { margin-left: 16px; }
+    .masaustu-menu li a, .masaustu-menu li:nth-child(n+3) a { padding-inline: 10px; font-size: 14px; }
   }
-  @media (min-width: 900px) {
-    .mobil-menu { display: none; }
-    .masaustu-menu { margin-left: 40px; }
-    .masaustu-menu ul { display: flex; gap: 38px; }
+
+  /* ---------- Mobil: Wix'in 320px mobil düzeni ekrana göre ölçeklenir ---------- */
+  @media (max-width: 979px) {
+    .ust { --u: min(calc(100vw / 320), 1.3px); }
+    .ustbar { height: calc(var(--u) * 44); }
+    .ustbar-ic { width: auto; margin: 0; padding: 0 calc(var(--u) * 13) 0 calc(var(--u) * 7); justify-content: flex-end; gap: calc(var(--u) * 12); }
+    .ub-oge span, .ub-ulasin, .ust-cta, .masaustu-menu { display: none; }
+    .ub-oge { margin: 0; }
+    .ub-oge :global(svg) { width: calc(var(--u) * 28); height: calc(var(--u) * 28); }
+    .ub-tel { order: 1; } .ub-wa { order: 2; } .ub-eposta { order: 3; }
+    .ub-cta-mobil { display: block; margin-right: auto; font: 400 calc(var(--u) * 15)/1 var(--baslik-font); letter-spacing: calc(var(--u) * .75); }
+    .menu-bar { width: auto; height: calc(var(--u) * 67); margin: 0; padding: 0 calc(var(--u) * 25) 0 calc(var(--u) * 7); }
+    .logo img { width: calc(var(--u) * 219); }
+    .mobil-menu { display: block; margin-left: auto; }
+    .mobil-menu summary { list-style: none; cursor: pointer; width: calc(var(--u) * 26); height: calc(var(--u) * 22); display: flex; flex-direction: column; justify-content: space-between; padding: 10px; box-sizing: content-box; margin: -10px; }
+    .mobil-menu summary::-webkit-details-marker { display: none; }
+    .mobil-menu summary span { display: block; height: calc(var(--u) * 2.5); background: #000; border-radius: 2px; }
+    .mobil-menu nav { position: absolute; left: 0; right: 0; top: 100%; background: #fff; box-shadow: var(--golge); padding: 8px 20px 16px; }
+    .mobil-menu li a { display: block; padding: 12px 0; border-bottom: 1px solid var(--cizgi); color: #222; text-decoration: none; font-size: 1.05rem; }
+    .mobil-menu li a[aria-current] { color: #515dac; }
   }
 </style>
