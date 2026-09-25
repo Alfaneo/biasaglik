@@ -1,6 +1,6 @@
 ---
 baslik: "Kronik Ağrı Tedavisi"
-altBaslik: "Kronik Ağrınız İçin Bizi Tercih Edin Ve Ağrısız Bir Yaşamınız Olsun"
+altBaslik: "Uzun süren ağrıyı kontrol altına alın, hayatınızı geri kazanın"
 kategori: "Ortopedik"
 sira: 3
 eskiUrl: "/kronik-agri"
@@ -8,32 +8,74 @@ seoBaslik: "Kronik Ağrı Tedavisi Evde | Bia Sağlık Fizik Tedavi"
 aciklama: "Bel, boyun, eklem ve fibromiyalji kaynaklı kronik ağrıda evde fizik tedavi. İlaçsız yöntemler ve egzersizle ağrıyı kontrol altına alın."
 kisaAciklama: "Bel, boyun, eklem ve fibromiyalji kaynaklı uzun süreli ağrılarda ilaçsız tedavi."
 hero: "../../assets/img/kronik-agri-hero.jpg"
-heroAlt: "Kronik Ağrı Tedavisi uygulaması"
-gorsel: "../../assets/img/kronik-agri-1.jpg"
-gorselAlt: "Fizyoterapist evde kronik ağrı tedavisi uyguluyor"
-ozet: "Kronik ağrı, yaşam kalitesini ciddi şekilde etkileyebilen bir durumdur. İnsanların günlük aktivitelerini kısıtlayabilir ve psikolojik olarak da olumsuz etkileyebilir. Ancak, kronik ağrıya yönelik etkili çözümler mevcuttur. Bu çözümler, modern tıbbın sunduğu yenilikçi tedavi yöntemleriyle birlikte multidisipliner bir yaklaşımı içerebilir. Kronik ağrıyı hafifletmek ve yaşam kalitesini artırmak için uzman doktorlarla işbirliği yapmak önemlidir. Unutmayın, yaşam kalitesini artırmak ve ağrıyı yönetmek mümkündür."
-endikasyonBaslik: "Hangi durumlarda uygulanır?"
-endikasyonGiris: "Kronik ağrı, çeşitli hastalık ve durumlarla ilişkilendirilebilir ve genellikle altta yatan bir sağlık sorununun belirtisi olarak ortaya çıkar. Kronik ağrıyı kapsayan bazı hastalıklar ve durumlar şunlar olabilir:"
+heroAlt: "Baş ağrısıyla elini alnına koymuş genç adam"
+gorsel: "../../assets/img/kronik-agri-2.jpg"
+gorselAlt: "Bel ağrısı nedeniyle öne eğilmiş, sırtını tutan kadın"
+ozet: "Üç aydan uzun süren ağrıya kronik ağrı denir. Kronik ağrı; uykuyu, işi, ruh halini ve günlük aktiviteleri etkileyerek yaşam kalitesini ciddi şekilde düşürebilir. Bia Sağlık'ta fizyoterapistimiz; egzersiz, manuel terapi, elektroterapi ve ağrı eğitimiyle, ağrının yönetilmesine ve hareketin yeniden kazanılmasına yönelik bir programı evinizde uygular."
+bilgiKutusu:
+  - { etiket: "Kronik ağrı", deger: "3 aydan uzun süren ağrı" }
+  - { etiket: "Seans süresi", deger: "Genellikle 45 – 60 dk" }
+  - { etiket: "Seans sıklığı", deger: "Haftada 2 – 3" }
+  - { etiket: "Yöntemler", deger: "Egzersiz, manuel terapi, TENS" }
+  - { etiket: "İlaç", deger: "Kullanılmaz" }
+  - { etiket: "Uygulayan", deger: "Fizyoterapist" }
+  - { etiket: "Uygulama yeri", deger: "Kendi evinizde" }
+  - { etiket: "İlk değerlendirme", deger: "Ücretsiz" }
+endikasyonBaslik: "Hangi ağrılarda uygulanır?"
+endikasyonGiris: "Fizik tedavi, kas-iskelet sistemi kaynaklı pek çok kronik ağrının yönetiminde önemli bir yer tutar:"
 endikasyonlar:
-  - { baslik: "Fibromiyalji", metin: "Genellikle yaygın kas ve bağ dokusu ağrısı ile karakterize olan bir durumdur. Ayrıca yorgunluk, uyku bozuklukları ve duygusal stres gibi semptomlar da gösterebilir." }
-  - { baslik: "Bel ve Boyun Ağrısı", metin: "Sıklıkla omurga, disk veya sinirlerdeki sorunlardan kaynaklanan ağrılar, kronik bel ve boyun ağrısı olarak tanımlanabilir." }
-  - { baslik: "Osteoartrit", metin: "Eklemlerdeki kıkırdak bozulması ve dejenerasyonu nedeniyle ortaya çıkan bir durumdur. Kronik eklem ağrısı, şişlik ve hareket kısıtlılığına neden olabilir." }
-  - { baslik: "Nöropatik Ağrı", metin: "Sinir hasarı veya işlev bozukluğu nedeniyle oluşan ağrı türüdür. Diyabetik nöropati, trigeminal nöralji ve postherpetik nevralji gibi durumlar nöropatik ağrıya yol açabilir." }
-  - { baslik: "Kronik Baş Ağrısı", metin: "Migren, gerilim tipi baş ağrısı ve küme baş ağrısı gibi farklı türlerde kronik baş ağrıları bulunmaktadır." }
-  - { baslik: "Kanser Ağrısı", metin: "Kanser veya kanser tedavisiyle ilişkili olarak ortaya çıkan ağrılar, kronik ve şiddetli olabilir." }
-  - { baslik: "İrritabl Bağırsak Sendromu (IBS)", metin: "Karın ağrısı, kramp, şişkinlik ve dışkı alışkanlıklarında değişiklikler gibi semptomlarla karakterize edilen bir sindirim sistemi bozukluğudur." }
-surecGiris: "Kronik ağrı tedavisi, bireyin özgün durumuna ve ağrının nedenlerine bağlı olarak belirlenen bir tedavi planı ile yönetilir. Tedavi süreci genellikle bir multidisipliner yaklaşımı içerir ve hastanın yaşam kalitesini artırmayı hedefler. İlk adım, hastanın detaylı bir değerlendirilmesidir. Bu değerlendirme, hastanın tıbbi geçmişi, semptomları ve ağrının süresi gibi faktörleri içerir. Fizik muayene ve gerektiğinde görüntüleme testleri de (örneğin, MRG, BT taramaları) kullanılabilir. Ardından, bir tedavi planı oluşturulur. Bu plan, hastanın özgün ihtiyaçlarına ve durumuna uygun olarak tasarlanır. İlaç tedavisi genellikle ağrıyı yönetmek için kullanılır ve nonsteroidal antiinflamatuar ilaçlar (NSAID'ler), opioidler, antidepresanlar ve antikonvülsanlar gibi ilaçlar sıklıkla reçete edilir. Bununla birlikte, ilaç tedavisi tek başına yeterli olmayabilir, bu yüzden fizik tedavi, rehabilitasyon programları ve psikolojik destek gibi diğer tedavi seçenekleri de kullanılabilir. Tedavi süreci, hastanın yanıtına ve iyileşme sürecine göre düzenli olarak değerlendirilir ve gerektiğinde ayarlamalar yapılır. Amacı, hastanın yaşam kalitesini artırmak, ağrıyı azaltmak ve günlük aktivitelerine geri dönmesine yardımcı olmaktır."
+  - { baslik: "Bel ve boyun ağrısı", metin: "Bel ve boyun fıtığı, düzleşme, duruş bozukluğu veya belirgin bir neden bulunamayan uzun süreli bel ve boyun ağrıları." }
+  - { baslik: "Fibromiyalji", metin: "Yaygın vücut ağrısı, yorgunluk ve uyku sorunlarıyla seyreden fibromiyaljide düzenli, dozu ayarlanmış egzersiz tedavinin temelidir." }
+  - { baslik: "Osteoartrit (kireçlenme)", metin: "Diz, kalça, el ve omurga eklemlerinde kireçlenmeye bağlı ağrı, sertlik ve hareket kısıtlılığı." }
+  - { baslik: "Miyofasiyal ağrı", metin: "Kaslarda tetik noktalar (kas düğümleri) kaynaklı, sırt, omuz ve boyuna yayılan ağrılar." }
+  - { baslik: "Nöropatik ağrı", metin: "Sinir sıkışması veya sinir hasarına bağlı yanma, karıncalanma ve batma tarzı ağrılarda destekleyici tedavi." }
+  - { baslik: "Gerilim tipi baş ağrısı", metin: "Boyun ve omuz kaslarındaki gerginlik ve duruş bozukluğuyla ilişkili tekrarlayan baş ağrıları." }
+  - { baslik: "Kanser tedavisi sonrası ağrı", metin: "Ameliyat, kemoterapi veya radyoterapi sonrası kas-eklem ağrısı, sertlik ve halsizlikte, hekim onayıyla destekleyici fizyoterapi." }
+surecBaslik: "Tedavi süreci adım adım"
+surecGiris: "Kronik ağrı tedavisi, kişinin durumuna ve ağrının nedenlerine göre planlanır. Amaç yalnızca ağrıyı azaltmak değil, ağrıya rağmen kısıtlanan hareketleri ve aktiviteleri yeniden kazandırmaktır. Gerektiğinde tedavi, hekiminizin ilaç ve diğer tedavileriyle birlikte yürütülür."
 adimlar:
-  - { baslik: "Kapsamlı Değerlendirme", metin: "BİA Sağlık, her hasta için özel olarak kapsamlı bir değerlendirme yapar. Hasta geçmişi, semptomlar, ağrının şiddeti ve süresi gibi faktörler incelenir." }
-  - { baslik: "Tedavi Planı", metin: "Her hastanın ihtiyaçlarına göre özelleştirilmiş bir tedavi planı oluşturulur. Bu plan, farmakolojik ve farmakolojik olmayan tedavi seçeneklerini içerebilir." }
-  - { baslik: "İlaç Tedavisi", metin: "İlaçlar, kronik ağrının yönetiminde önemli bir rol oynar. BİA Sağlık, etkili ve güvenilir ilaçları kullanarak hastaların ağrılarını azaltmaya çalışır." }
-  - { baslik: "Fizik Tedavi ve Rehabilitasyon", metin: "Fizik tedavi ve rehabilitasyon programları, kronik ağrının yönetiminde önemli bir rol oynar. BİA Sağlık, hastaların fiziksel fonksiyonlarını iyileştirmek ve ağrılarını azaltmak için uygun egzersizler ve terapiler sunar." }
-  - { baslik: "Psikolojik Destek", metin: "Kronik ağrı sıklıkla psikolojik stres ve anksiyeteye neden olabilir. BİA Sağlık, hastaların psikolojik ihtiyaçlarını karşılamak için psikolojik destek ve danışmanlık hizmetleri sunar." }
-  - { baslik: "Kombine Yaklaşım", metin: "BİA Sağlık, hastaların en iyi sonuçları elde etmeleri için kombine bir tedavi yaklaşımını benimser. Bu yaklaşım, ilaç tedavisi, fizik tedavi, psikolojik destek ve diğer tedavi seçeneklerinin entegrasyonunu içerir." }
+  - { baslik: "Kapsamlı değerlendirme", metin: "Ağrının yeri, süresi, şiddeti, artıran ve azaltan durumlar, uyku ve günlük aktivitelere etkisi ayrıntılı olarak sorgulanır; duruş, hareket ve kas gücü değerlendirilir." }
+  - { baslik: "Ağrı eğitimi", metin: "Kronik ağrının vücutta nasıl oluştuğu ve neden hareketin ağrıyı azaltabileceği anlaşılır bir dille anlatılır. Ağrıyı anlamak, ağrı korkusunu ve hareketten kaçınmayı azaltır." }
+  - { baslik: "Ağrının azaltılması", metin: "Manuel terapi, yumuşak doku teknikleri, TENS, sıcak-soğuk uygulamalar ve gerektiğinde kuru iğneleme ile ağrı kontrol altına alınır." }
+  - { baslik: "Aşamalı egzersiz", metin: "Düşük yoğunlukta başlayıp giderek artan güçlendirme, esneklik ve aerobik egzersizlerle vücudun hareket toleransı artırılır." }
+  - { baslik: "Günlük yaşam düzenlemeleri", metin: "Oturma, çalışma, uyku pozisyonu ve aktivite dengesi (dinlenme-hareket planı) üzerine pratik öneriler verilir." }
+  - { baslik: "Kendi kendini yönetme", metin: "Ağrı alevlendiğinde ne yapacağınızı bilmeniz için size özel bir ev programı ve ağrı yönetim planı hazırlanır." }
+avantajBaslik: "Fizik tedavinin kronik ağrıdaki yeri"
+avantajlar:
+  - { baslik: "İlaçsız ağrı yönetimi", metin: "Uzun süreli ağrı kesici kullanımının yan etkileri olmadan ağrının kontrol altına alınmasına yardımcı olur." }
+  - { baslik: "Hareketi geri kazandırır", metin: "Ağrı nedeniyle bırakılan yürüyüş, ev işleri ve hobiler kontrollü şekilde yeniden hayata eklenir." }
+  - { baslik: "Uyku ve enerji", metin: "Düzenli egzersiz ve ağrının azalması, uyku kalitesini ve gün içi enerjiyi olumlu etkiler." }
+  - { baslik: "Kalıcı alışkanlıklar", metin: "Duruş, egzersiz ve aktivite dengesi alışkanlıkları, ağrının tekrarlamasını önlemeye yardımcı olur." }
+  - { baslik: "Kendi ortamınızda", metin: "Ağrılı günlerde bile yol ve bekleme olmadan tedavinizi sürdürürsünüz; tedaviye devamlılık artar." }
+  - { baslik: "Birebir takip", metin: "Aynı fizyoterapistin düzenli takibi, programın ağrınızın seyrine göre sürekli ayarlanmasını sağlar." }
+onemli:
+  baslik: "Hangi durumda önce doktora gitmeli?"
+  metin: "Kronik ağrının çoğu kas-iskelet sistemi kaynaklıdır; ancak açıklanamayan kilo kaybı, gece uykudan uyandıran şiddetli ağrı, ateş, bacaklarda giderek artan güçsüzlük veya idrar-dışkı kontrolünde bozulma gibi belirtiler ciddi bir hastalığın işareti olabilir. Bu belirtilerden biri varsa fizik tedaviye başlamadan önce mutlaka bir hekim tarafından değerlendirilin."
+sss:
+  - { soru: "Ağrım varken egzersiz yapmak zarar verir mi?", cevap: "Kronik ağrıda, doğru dozda ve aşamalı olarak yapılan egzersiz zarar vermez; aksine ağrının azaltılmasında en etkili yöntemlerden biridir. Egzersizler ağrı düzeyinize göre başlatılır ve kademeli artırılır." }
+  - { soru: "Kronik ağrı tamamen geçer mi?", cevap: "Bazı hastalarda ağrı tamamen geçer, bazılarında ise belirgin şekilde azalır ve kontrol altına alınır. Hedef, ağrının hayatınızı yönetmesi yerine sizin ağrıyı yönetebilmenizdir." }
+  - { soru: "Hangi yöntemler kullanılıyor?", cevap: "Egzersiz tedavisi, manuel terapi, yumuşak doku teknikleri, TENS gibi elektroterapi yöntemleri, gerektiğinde kuru iğneleme ve ağrı eğitimi birlikte kullanılır. Seçim değerlendirme sonucuna göre yapılır." }
+  - { soru: "İlaçlarımı bırakmalı mıyım?", cevap: "Hayır. İlaç tedavinizle ilgili kararları yalnızca hekiminiz verir. Fizik tedavi ilaç tedavisiyle birlikte güvenle yürütülebilir; ağrınız azaldıkça ilaç ihtiyacınızı hekiminizle birlikte değerlendirebilirsiniz." }
+  - { soru: "Ne kadar sürede fark hissederim?", cevap: "Pek çok hasta ilk birkaç hafta içinde hareket kolaylığı ve ağrıda azalma fark eder. Kalıcı sonuç için egzersizlerin tedavi bittikten sonra da düzenli sürdürülmesi önemlidir." }
 guncelleme: 2026-09-25
 ---
-## Bia Sağlıkta Kronik Ağrı İçin Hizmetimiz
+## Kronik ağrı nedir?
 
-Bia Sağlık, kronik ağrı tedavisinde kapsamlı bir yaklaşımı benimseyen bir sağlık kuruluşudur. Her hasta için özelleştirilmiş bir tedavi planı oluşturulurken, kapsamlı bir değerlendirme süreci izlenir. Bu süreçte hastanın geçmişi, semptomları, ağrı şiddeti ve süresi gibi faktörler detaylı bir şekilde incelenir.
+Normalde ağrı, vücudu bir yaralanmaya karşı uyaran ve doku iyileştikçe azalan bir sinyaldir. Ağrının üç aydan uzun sürmesi durumunda ise **kronik ağrıdan** söz edilir. Kronik ağrıda, sinir sistemi ağrı sinyallerine karşı aşırı duyarlı hale gelebilir; bu nedenle ağrının şiddeti her zaman dokudaki hasarın büyüklüğünü yansıtmaz.
 
-Tedavi planları genellikle ilaç tedavisi, fizik tedavi ve rehabilitasyon, psikolojik destek ve diğer tedavi seçeneklerinin kombinasyonunu içerir. BİA Sağlık, hastaların fiziksel ve psikolojik ihtiyaçlarını karşılamak için uzman bir ekip ve son teknoloji ekipmanlarla donatılmıştır. Amacı, hastaların yaşam kalitesini artırmak ve kronik ağrılarını etkin bir şekilde yönetmelerine yardımcı olmaktır.
+Bia Sağlık, kronik ağrı tedavisinde kapsamlı bir yaklaşımı benimser. Her hasta için tedavi planı oluşturulmadan önce hastanın geçmişi, şikâyetleri, ağrının şiddeti ve süresi ayrıntılı olarak incelenir.
+
+## Akut ve kronik ağrı arasındaki fark
+
+| | Akut ağrı | Kronik ağrı |
+| --- | --- | --- |
+| **Süre** | Günler – haftalar | 3 aydan uzun |
+| **Neden** | Genellikle belirgin bir yaralanma | Çoğu zaman birden çok etken |
+| **Doku ile ilişkisi** | Hasarla orantılı | Hasardan bağımsız olarak sürebilir |
+| **Tedavinin odağı** | Dinlenme, dokunun korunması | Aktif egzersiz, hareket, ağrı eğitimi |
+
+## Kısır döngüyü kırmak
+
+Kronik ağrıda sık görülen döngü şudur: **ağrı → hareketten kaçınma → kaslarda zayıflama ve sertlik → daha az dayanıklılık → daha fazla ağrı.** Fizik tedavi, bu döngüyü kontrollü ve aşamalı hareketle kırmayı hedefler. Vücut her hafta biraz daha fazlasına alıştırılır; böylece ağrı azalırken yapabildikleriniz artar.
+
+İlgili hizmetlerimiz: [kuru iğneleme](/kuru-igneleme), [elektroterapi](/elektro-terapi), [medikal masaj](/medikal-masaj), [kayropraktik rehabilitasyon](/kayropraktik).

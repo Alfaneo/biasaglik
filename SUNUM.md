@@ -28,32 +28,54 @@ Mevcut Wix sitesi ile yeni sitenin **aynı tasarımda** karşılaştırması.
 | Sayfa ağırlığı | 2.071 KB | **80 KB** (26× hafif) |
 | İstek sayısı | 166 | **7** |
 
-Test edilen tüm yeni sayfalar (anasayfa, hizmetlerimiz, iletişim, hakkımızda, ekibimiz, evde fizik tedavi, 4 hizmet sayfası) **4 kategoride de 100** aldı.
+Test edilen tüm yeni sayfalar (anasayfa, hizmetlerimiz, iletişim, hakkımızda, ekibimiz, evde fizik tedavi ve 9 hizmet sayfası) **4 kategoride de 100** aldı. İçerik %50 artmasına rağmen hizmet sayfaları 80–110 KB arasında kaldı.
 
 > Not: Yeni site henüz yayında değil. Ölçüm yerel sunucuda yapıldı. Cloudflare'in İstanbul sunucusundan yayınlandığında sonuç aynı veya daha iyi olur.
 
 ## 2. Daha bilgilendirici (içerik)
 
-| Sayfa | Mevcut kelime | Yeni kelime |
-|---|---|---|
-| Elektroterapi | 625 | **1.089** (+%74) |
-| Evde Fizik Tedavi | 397 (anasayfanın kopyası) | **862**: ayrı, özgün rehber sayfası |
-| Anasayfa | 385 | **666** |
+19 hizmet sayfasının hepsi aynı zengin içerik modeline geçirildi:
 
-Elektroterapi sayfasına eklenen yeni içerik türleri:
+| Sayfa | Mevcut kelime | Yeni kelime | Artış |
+|---|---|---|---|
+| 3 Boyutlu Skolyoz Terapisi | 567 | 803 | +%42 |
+| Bobath Terapisi | 674 | 870 | +%29 |
+| Elektroterapi | 625 | 1.089 | +%74 |
+| Evde Fizik Tedavi | 397 | 862 | +%117 |
+| Kayropraktik | 586 | 864 | +%47 |
+| Kronik Ağrı | 653 | 975 | +%49 |
+| Kuru İğneleme | 786 | 930 | +%18 |
+| Kırık Sonrası Tedavi | 585 | 941 | +%61 |
+| Lenfödem Tedavisi | 634 | 942 | +%49 |
+| Mat Pilates | 548 | 850 | +%55 |
+| Medikal Masaj | 311 | 807 | +%159 |
+| Nörolojik Rehabilitasyon | 561 | 941 | +%68 |
+| Ortopedik ve Sporcu Rehab. | 677 | 924 | +%36 |
+| Pediatrik Rehabilitasyon | 582 | 879 | +%51 |
+| Pelvik Taban Rehab. | 736 | 914 | +%24 |
+| Pulmoner Rehabilitasyon | 655 | 889 | +%36 |
+| Skolyoz Tedavisi | 553 | 894 | +%62 |
+| Vestibüler Rehabilitasyon | 533 | 895 | +%68 |
+| Yoğun Bakım Sonrası | 840 | 929 | +%11 |
+| **TOPLAM (19 sayfa)** | 11.503 | 17.198 | +%50 |
 
-- **Tedavi bilgisi kutusu:** seans süresi, seans sayısı, anestezi, günlük hayata dönüş…
-- **Yöntemler tablosu:** TENS, EMS, enterferansiyel akım, ultrason; ne işe yarar, nerede kullanılır
-- **"Nasıl çalışır?"** bölümü
-- **"Kimlere uygulanmaz?"** listesi (hasta güvenliği)
+Her hizmet sayfasında artık şu içerik türleri var (eski sitede yalnızca düz paragraf ve madde listesi vardı):
+
+- **Tedavi bilgisi kutusu:** seans süresi, sıklık, uygulayan, uygulama yeri, ilk değerlendirme
+- **"Nedir?"** ve **"Nasıl çalışır?"** bölümleri
+- **Karşılaştırma tabloları:** yöntemler, evreler, türler, gelişim basamakları, eski ve yeni yaklaşım farkları
+- **"Hangi durumlarda uygulanır?"** kartları
+- **Adım adım tedavi süreci**
 - **Avantajlar** kartları
-- **"Önemli" kutusu:** "Elektroterapi tek başına yeterli midir?"
-- **Sıkça sorulan sorular** (Google'da soru-cevap olarak görünebilir)
-- **"İçeriği kontrol eden uzman"** ve güncelleme tarihi (Google sağlık içeriklerinde bunu arıyor)
+- **"Önemli" kutusu:** kimlere uygulanmaz, ne zaman doktora gidilmeli gibi hasta güvenliği bilgileri
+- **5 soruluk SSS** ve FAQPage schema (Google'da soru-cevap olarak görünebilir)
+- **İç linkler:** ilgili hizmetlere metin içi bağlantılar
+- **Güncelleme tarihi** ve tıbbi bilgilendirme notu
 
-Yeni sayfalar:
-- **/hizmetlerimiz:** tüm hizmetler kategori kategori (eski sitede böyle bir sayfa yoktu)
-- **/evde-fizik-tedavi:** gerçek bir rehber sayfası; evde ve klinikte tedavi karşılaştırması, süreç, SSS
+Ayrıca:
+- **/hizmetlerimiz:** tüm hizmetler kategori kategori (eski sitede yoktu)
+- **/evde-fizik-tedavi:** anasayfanın kopyası olmaktan çıkıp gerçek bir rehber sayfası oldu
+- Eski metinlerdeki, bir evde fizyoterapi hizmetinin sunmadığı vaatler (ilaç tedavisi, konuşma terapisi, diyetisyen, psikolog ekibi) çıkarıldı
 
 ## 3. Daha SEO uyumlu
 

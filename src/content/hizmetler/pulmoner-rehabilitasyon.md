@@ -1,41 +1,81 @@
 ---
 baslik: "Pulmoner Rehabilitasyon"
-altBaslik: "Pulmoner Rehabilitasyon ile Yaşam Kalitenizi Arttırın"
+altBaslik: "Pulmoner rehabilitasyon ile daha rahat nefes, daha aktif bir yaşam"
 kategori: "Kardiyopulmoner"
 sira: 1
 eskiUrl: "/pulmoner-rehabilitasyon"
 seoBaslik: "Pulmoner (Solunum) Rehabilitasyonu Evde | Bia Sağlık"
 aciklama: "KOAH, astım ve akciğer ameliyatı sonrası evde solunum rehabilitasyonu. Nefes darlığını azaltan egzersizler ve solunum eğitimi."
 kisaAciklama: "KOAH, astım ve akciğer hastalıklarında nefes darlığını azaltan solunum programı."
-hero: "../../assets/img/pulmoner-rehabilitasyon-hero.jpg"
-heroAlt: "Pulmoner Rehabilitasyon uygulaması"
-gorsel: "../../assets/img/pulmoner-rehabilitasyon-1.jpg"
-gorselAlt: "Fizyoterapist evde pulmoner rehabilitasyon uyguluyor"
-ozet: "Pulmoner rehabilitasyon, solunum sistemi hastalıklarından etkilenen bireylerin yaşam kalitesini artırmak ve fonksiyonlarını en üst düzeye çıkarmak için önemli bir araçtır. Bu programlar, hastaların solunum sorunlarıyla daha etkili bir şekilde başa çıkmalarını ve günlük yaşam aktivitelerinde daha aktif olmalarını sağlayarak yaşam sürelerini uzatmaya da yardımcı olabilir."
-endikasyonBaslik: "Hangi durumlarda uygulanır?"
-endikasyonGiris: "Pulmoner rehabilitasyon hizmetlerimizi kimler kullanmalı? Bu hastalıklar arasında:"
+hero: "../../assets/img/pulmoner-rehabilitasyon-1.jpg"
+heroAlt: "Nebulizatör maskesiyle solunum tedavisi alan genç kadın"
+gorsel: "../../assets/img/pulmoner-rehabilitasyon-2.jpg"
+gorselAlt: "Sağlık uzmanı, hastanın solunum fonksiyonunu ölçüyor"
+ozet: "Pulmoner rehabilitasyon; KOAH, astım, akciğer fibrozisi ve akciğer ameliyatı sonrası gibi durumlarda nefes darlığını azaltmaya, egzersiz kapasitesini artırmaya ve günlük aktiviteleri kolaylaştırmaya yönelik bir programdır. Bia Sağlık'ta solunum egzersizleri, balgam atma teknikleri ve dayanıklılık çalışmaları fizyoterapistimiz tarafından evinizde uygulanır."
+bilgiKutusu:
+  - { etiket: "Seans süresi", deger: "Genellikle 45 – 60 dk" }
+  - { etiket: "Seans sıklığı", deger: "Haftada 2 – 3" }
+  - { etiket: "Program süresi", deger: "Genellikle 6 – 12 hafta" }
+  - { etiket: "Takip", deger: "Nabız ve oksijen ölçümüyle" }
+  - { etiket: "Oksijen kullananlar", deger: "Uygundur" }
+  - { etiket: "Uygulayan", deger: "Fizyoterapist" }
+  - { etiket: "Uygulama yeri", deger: "Kendi evinizde" }
+  - { etiket: "İlk değerlendirme", deger: "Ücretsiz" }
+endikasyonBaslik: "Pulmoner rehabilitasyon kimler için uygundur?"
+endikasyonGiris: "Nefes darlığı nedeniyle günlük aktiviteleri kısıtlanan pek çok solunum hastası pulmoner rehabilitasyondan fayda görür:"
 endikasyonlar:
-  - { baslik: "Kronik Obstrüktif Akciğer Hastalığı (KOAH)", metin: "KOAH, solunum yollarının kronik olarak daralmasıyla karakterize edilen bir hastalıktır. Pulmoner rehabilitasyon, KOAH'ın semptomlarını yönetmeye ve hastanın solunum fonksiyonlarını iyileştirmeye yardımcı olur." }
-  - { baslik: "Akciğer Kanseri", metin: "Akciğer kanseri, akciğerlerde anormal hücre büyümesiyle karakterizedir. Pulmoner rehabilitasyon, kanser tedavisi sırasında ve sonrasında solunum fonksiyonlarını korumak ve yaşam kalitesini artırmak için kullanılır." }
-  - { baslik: "Fibrozis", metin: "Akciğer fibrozisi, akciğer dokusunun skarlaşması ve kalınlaşmasıyla karakterizedir. Pulmoner rehabilitasyon, fibrozis semptomlarını hafifletmek, nefes darlığını azaltmak ve egzersiz kapasitesini artırmak için önemlidir." }
-  - { baslik: "Emfizem", metin: "Emfizem, akciğer hava keseciklerinin hasar görmesiyle karakterizedir. Pulmoner rehabilitasyon, emfizem semptomlarını yönetmeye, egzersiz kapasitesini artırmaya ve yaşam kalitesini iyileştirmeye yardımcı olabilir." }
-  - { baslik: "Bronşit Kronik", metin: "Kronik bronşit, solunum yollarının kronik olarak iltihaplanmasıyla karakterizedir. Pulmoner rehabilitasyon, kronik bronşitin semptomlarını hafifletmek ve solunum fonksiyonlarını iyileştirmek için kullanılır." }
-  - { baslik: "Pnömoni", metin: "Pnömoni, akciğerlerin enfeksiyonu ve inflamasyonuyla karakterizedir. Pulmoner rehabilitasyon, pnömoni sonrası solunum fonksiyonlarını iyileştirmeye ve hastanın güçlenmesine yardımcı olabilir." }
-  - { baslik: "Akciğer Tümörleri", metin: "Akciğer tümörleri, akciğerlerdeki anormal hücre büyümesiyle karakterizedir. Pulmoner rehabilitasyon, akciğer tümörleriyle mücadelede solunum fonksiyonlarını korumak ve hastanın yaşam kalitesini artırmak için önemlidir." }
-  - { baslik: "Interstitial Pulmoner Hastalıklar", metin: "Bu hastalık grubu, akciğer dokusunda inflamasyon ve skarlaşma ile karakterizedir. Pulmoner rehabilitasyon, interstitial pulmoner hastalıkların semptomlarını hafifletmeye ve yaşam kalitesini artırmaya yardımcı olabilir." }
-  - { baslik: "Solunum Sistemi Enfeksiyonları", metin: "Solunum sistemi enfeksiyonları, solunum yollarında enfeksiyon ve inflamasyonu içerir. Pulmoner rehabilitasyon, enfeksiyon sonrası solunum fonksiyonlarını iyileştirmek ve hastanın güçlenmesine yardımcı olabilir." }
-surecGiris: "Rehabilitasyon süreci, kişinin ihtiyaçlarına ve hedeflerine göre değişebilir. Örneğin, bir kişi KOAH sonucu kaybettiği fonksiyonları geri kazanmak isteyebilirken, başka bir kişi akciğer kanseri sonucu elde ettiği hasarları en aza indirmek isteyebilir. Amacımız, kişinin hayat kalitesini ve işlevselliğini en yüksek düzeyde geri kazandırmaktır. Ayrıca, rehabilitasyon sürecinde kişinin ailesi veya yakın çevresi de aktif olarak yer almalıdır. Bu, kişinin tedaviye daha iyi adapte olmasını ve uzun vadeli sonuçların daha iyi olmasını sağlar. Aile ve yakın çevrenin, kişinin tedaviye nasıl dahil edileceği, tedavi sürecinde nasıl destekleneceği ve rehabilitasyon sonrası hayatta nasıl devam edeceği gibi konularda bilgilendirilmeleri önemlidir."
+  - { baslik: "KOAH", metin: "Kronik obstrüktif akciğer hastalığı (kronik bronşit ve amfizem) pulmoner rehabilitasyonun en sık uygulandığı durumdur." }
+  - { baslik: "Astım", metin: "Egzersizle tetiklenen nefes darlığında kontrollü egzersiz, doğru nefes teknikleri ve kondisyonun artırılması." }
+  - { baslik: "Akciğer fibrozisi", metin: "İnterstisyel akciğer hastalıklarında nefes darlığıyla baş etme ve egzersiz kapasitesinin korunması." }
+  - { baslik: "Bronşektazi", metin: "Sık balgam ve tekrarlayan enfeksiyonlarda hava yolu temizleme teknikleriyle akciğerlerin temiz tutulması." }
+  - { baslik: "Akciğer ameliyatı öncesi ve sonrası", metin: "Akciğer kanseri veya diğer nedenlerle yapılan ameliyatlardan önce hazırlık, sonrasında akciğer genişlemesinin ve kondisyonun desteklenmesi." }
+  - { baslik: "Zatürre ve enfeksiyon sonrası", metin: "Ağır zatürre veya solunum yolu enfeksiyonu sonrasında devam eden nefes darlığı ve halsizlik." }
+  - { baslik: "Nöromüsküler hastalıklar", metin: "Solunum kaslarını etkileyen hastalıklarda solunum egzersizleri ve öksürük desteği." }
+surecBaslik: "Tedavi süreci adım adım"
+surecGiris: "Program, kişinin solunum kapasitesine, hastalığın evresine ve hedeflerine göre hazırlanır. Tüm egzersizler nabız ve oksijen düzeyi takip edilerek güvenli sınırlar içinde yapılır."
 adimlar:
-  - { baslik: "Solunum Egzersizleri", metin: "Solunum kaslarını güçlendirmek ve solunum tekniklerini geliştirmek için tasarlanmış egzersizlerdir. Bu egzersizler, nefes alma ve nefes verme tekniklerini öğretir ve solunum verimliliğini artırır." }
-  - { baslik: "Egzersiz Terapisi", metin: "Aerobik egzersizler ve dayanıklılık egzersizleri, genel fiziksel dayanıklılığı artırmak, solunum sistemi fonksiyonlarını geliştirmek ve günlük aktivitelerdeki bağımsızlığı desteklemek için kullanılır." }
-  - { baslik: "Solunum Yolu Temizliği", metin: "Mukusun temizlenmesini kolaylaştırmak ve solunum yollarını açmak için yapılan tekniklerdir. Bu teknikler, hastanın nefes almasını kolaylaştırır ve solunum yeteneklerini artırır." }
-  - { baslik: "Eğitim ve Danışmanlık", metin: "Hastaya ve ailesine, hastalığı yönetme, ilaçların düzgün kullanımı, nefes alma teknikleri, egzersizler ve hastalığın belirtileri hakkında eğitim verilir. Ayrıca, sağlıklı yaşam tarzı değişiklikleri konusunda danışmanlık sağlanır." }
-  - { baslik: "Psikososyal Destek", metin: "Hastanın duygusal ve psikolojik ihtiyaçlarını karşılamak için psikolojik destek ve danışmanlık sağlanır. Bu, hastanın stresle başa çıkmasına, depresyonu yönetmesine ve yaşam kalitesini artırmasına yardımcı olabilir." }
-  - { baslik: "Beslenme Danışmanlığı", metin: "Sağlıklı beslenme alışkanlıklarını teşvik etmek ve hastanın beslenme ihtiyaçlarını karşılamak için beslenme danışmanlığı sağlanır. Bu, hastanın güçlenmesini ve iyileşmesini destekler." }
+  - { baslik: "Değerlendirme", metin: "Nefes darlığının derecesi, oksijen doygunluğu, solunum şekli, öksürük ve balgam, kas gücü ve yürüme kapasitesi değerlendirilir. Hekim raporları ve solunum testleri incelenir." }
+  - { baslik: "Solunum egzersizleri", metin: "Büzük dudak solunumu ve diyafram solunumu gibi tekniklerle nefes kontrolü öğretilir; nefes darlığı anında ne yapılacağı çalışılır." }
+  - { baslik: "Hava yolu temizliği", metin: "Balgamı olan hastalarda etkili öksürme, drenaj pozisyonları ve gerektiğinde yardımcı cihazlarla balgam atılması kolaylaştırılır." }
+  - { baslik: "Egzersiz eğitimi", metin: "Yürüme, bisiklet benzeri hareketler ve kol-bacak güçlendirme egzersizleriyle dayanıklılık aşamalı olarak artırılır." }
+  - { baslik: "Enerji koruma teknikleri", metin: "Giyinme, banyo ve ev işlerini daha az nefes darlığıyla yapmanızı sağlayacak pratik yöntemler öğretilir." }
+  - { baslik: "Eğitim ve ev programı", metin: "İnhaler kullanımına dikkat, alevlenme belirtilerini tanıma ve düzenli egzersiz alışkanlığı için ev programı verilir." }
+avantajBaslik: "Pulmoner rehabilitasyonun kazandırdıkları"
+avantajlar:
+  - { baslik: "Nefes darlığında azalma", metin: "Doğru nefes teknikleri ve güçlenen kaslar sayesinde aynı işi daha az nefes darlığıyla yapabilirsiniz." }
+  - { baslik: "Egzersiz kapasitesi", metin: "Yürüme mesafesi ve dayanıklılık artar; merdiven çıkmak, alışveriş yapmak kolaylaşır." }
+  - { baslik: "Daha az hastane yatışı", metin: "Düzenli pulmoner rehabilitasyonun, KOAH'ta alevlenmeye bağlı hastane yatışlarını azaltmaya yardımcı olduğu bilinmektedir." }
+  - { baslik: "Balgam kontrolü", metin: "Hava yolu temizleme teknikleriyle balgam daha kolay atılır, enfeksiyon riski azalır." }
+  - { baslik: "Günlük yaşamda bağımsızlık", metin: "Enerji koruma teknikleriyle kişisel bakım ve ev işlerinde bağımsızlık artar." }
+  - { baslik: "Evde güvenli program", metin: "Oksijen tüpü veya konsantratörü olan hastalar dahil, tedavi kendi evinizde ve takip altında yapılır." }
+onemli:
+  baslik: "Egzersiz sırasında dikkat"
+  metin: "Egzersiz sırasında hafif nefes darlığı beklenen bir durumdur ve güvenli sınırlar içinde tutulur. Ancak göğüs ağrısı, dudaklarda morarma, baş dönmesi veya dinlenmekle geçmeyen şiddetli nefes darlığı olursa egzersiz hemen durdurulur. Ateş, balgam renginde değişme veya nefes darlığında belirgin artış gibi alevlenme belirtilerinde hekiminize başvurun."
+sss:
+  - { soru: "Nefes darlığım varken egzersiz yapmam güvenli mi?", cevap: "Evet, doğru dozda yapıldığında güvenlidir ve pulmoner rehabilitasyonun temelini oluşturur. Egzersizler nabız ve oksijen düzeyi takip edilerek, sizin için güvenli yoğunlukta yapılır." }
+  - { soru: "Evde oksijen kullanıyorum, rehabilitasyon alabilir miyim?", cevap: "Evet. Oksijen tedavisi alan hastalar da pulmoner rehabilitasyondan fayda görür. Egzersizler oksijen desteği altında ve oksijen düzeyiniz izlenerek yapılır." }
+  - { soru: "Program ne kadar sürer?", cevap: "Pulmoner rehabilitasyon programları genellikle 6 – 12 hafta sürer. Kazanımların korunması için programdan sonra da düzenli egzersize devam edilmesi önemlidir." }
+  - { soru: "Hangi egzersizler yapılıyor?", cevap: "Solunum egzersizleri, yürüme ve dayanıklılık çalışmaları, kol ve bacak güçlendirme ile balgam atma teknikleri programın temel parçalarıdır." }
+  - { soru: "İlaçlarımı kullanmaya devam edecek miyim?", cevap: "Evet. Pulmoner rehabilitasyon, hekiminizin önerdiği ilaç ve inhaler tedavisinin yerine geçmez; onu tamamlar. İlaçlarınızla ilgili kararları hekiminiz verir." }
 guncelleme: 2026-09-25
 ---
-## Bia Sağlıkta Pulmoner Rehabilitasyon Hizmeti
+## Pulmoner rehabilitasyon nedir?
 
-Pulmoner rehabilitasyon, multidisipliner bir yaklaşım gerektirir ve birçok farklı uzmanın birlikte çalışmasını içerir. Solunum terapistleri, fizyoterapistler, egzersiz fizyologları, diyetisyenler ve psikologlar gibi uzmanlar, hastanın ihtiyaçlarına ve durumuna uygun bir tedavi planı oluşturmak ve uygulamak için bir araya gelirler. Bu ekip, solunum fonksiyonlarını değerlendirir, egzersiz programları tasarlar, solunum tekniklerini öğretir, psikososyal destek sağlar ve yaşam tarzı değişiklikleri konusunda rehberlik eder.
+Pulmoner rehabilitasyon, kronik solunum hastalığı olan kişilerin nefes darlığını azaltmak, fiziksel kapasitelerini artırmak ve günlük yaşamdaki bağımsızlıklarını desteklemek için uygulanan kapsamlı bir programdır. Hastalığın akciğerdeki etkisini ortadan kaldırmasa da, hastanın bu durumla çok daha rahat yaşamasını sağlar.
 
-Pulmoner rehabilitasyonun temel amacı, hastanın solunum yeteneklerini artırmak, nefes darlığı ile başa çıkmak, mukusun temizlenmesini kolaylaştırmak ve günlük aktivitelerdeki bağımsızlığını artırmaktır. Bu programlar genellikle egzersiz, solunum teknikleri, yaşam tarzı değişiklikleri, beslenme danışmanlığı ve psikososyal destek gibi çeşitli tedavi modalitelerini içerir. Tedavi süreci, hastanın yanıtı ve ilerlemesi düzenli olarak izlenir ve gerektiğinde tedavi planı revize edilir.
+Bia Sağlık'ta pulmoner rehabilitasyon; hekiminizin tedavisiyle uyumlu şekilde, solunum fonksiyonlarınızın değerlendirilmesiyle başlar. Ardından egzersiz programları tasarlanır ve solunum teknikleri öğretilir.
+
+## Nefes darlığı kısır döngüsü
+
+KOAH ve benzeri hastalıklarda şu döngü sık görülür: **nefes darlığı → hareketten kaçınma → kasların zayıflaması → aynı iş için daha fazla oksijen ihtiyacı → daha fazla nefes darlığı.** Pulmoner rehabilitasyon, bu döngüyü güçlenen kaslar ve doğru nefes teknikleriyle kırar.
+
+## Temel solunum teknikleri
+
+| Teknik | Nasıl yapılır? | Ne işe yarar? |
+| --- | --- | --- |
+| **Büzük dudak solunumu** | Burundan alınan nefes, ıslık çalar gibi büzülmüş dudaklardan yavaşça verilir | Nefes darlığını hafifletir, solunumu yavaşlatır |
+| **Diyafram solunumu** | Nefes alırken karın öne doğru yükselir, göğüs sabit kalır | Solunumu daha verimli hale getirir |
+| **Kontrollü öksürük** | Derin nefes sonrası iki-üç kısa, güçlü öksürük | Balgamı az yorularak atmayı sağlar |
+| **Rahatlatıcı pozisyonlar** | Öne eğilip kolları dizlere veya masaya dayamak | Nefes darlığı anında rahatlama |
+
+İlgili hizmetlerimiz: [yoğun bakım sonrası fizik tedavi](/yogun-bakim-sonrasi-fizik-tedavi), [evde fizik tedavi](/evde-fizik-tedavi).

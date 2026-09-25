@@ -8,28 +8,68 @@ seoBaslik: "3 Boyutlu Skolyoz Terapisi Evde | Bia Sağlık"
 aciklama: "Omurganın üç boyutlu eğriliğine yönelik skolyoz terapisi. Solunum, duruş ve özel egzersizlerle evde uygulanan kişiye özel program."
 kisaAciklama: "Omurganın üç boyutlu eğriliğine solunum ve duruş egzersizleriyle yaklaşan özel yöntem."
 hero: "../../assets/img/3-boyutlu-skolyoz-terapisi-hero.jpg"
-heroAlt: "3 Boyutlu Skolyoz Terapisi uygulaması"
+heroAlt: "Fizyoterapist, oturan hastanın omurgasını ve omuz hizasını düzeltiyor"
 gorsel: "../../assets/img/3-boyutlu-skolyoz-terapisi-1.jpg"
-gorselAlt: "Fizyoterapist evde 3 boyutlu skolyoz terapisi uyguluyor"
-ozet: "Skolyoz, omurganın yana doğru eğriliği ile karakterize olan yaygın bir omurga rahatsızlığıdır. Hem çocuklarda hem de yetişkinlerde ortaya çıkabilen bu durum, fiziksel rahatsızlıkların yanı sıra psikolojik etkiler de yaratabilir. Bia Sağlık olarak, skolyozun etkilerini en aza indirmek ve hastaların yaşam kalitesini artırmak için uzmanlaşmış bir tedavi yaklaşımı sunuyoruz. Her hasta için kişiselleştirilmiş bir tedavi planı oluşturarak, skolyozla mücadelede etkili çözümler sunuyoruz."
-endikasyonBaslik: "Hangi durumlarda uygulanır?"
-endikasyonGiris: "Skolyoz Terapisi, geniş bir yelpazedeki sorunları kapsar. Bu hastalıklar arasında:"
+gorselAlt: "Fizyoterapist, küçük bir kız çocuğunun sırtında skolyoz egzersizi yaptırıyor"
+ozet: "Skolyoz yalnızca omurganın yana eğrilmesi değildir: omurlar aynı zamanda döner ve sırtın doğal kavisleri değişir. 3 boyutlu skolyoz terapisi, bu üç düzlemi birlikte ele alan, kişinin kendi eğrilik tipine göre tasarlanmış düzeltici egzersizler, düzeltici solunum ve duruş eğitiminden oluşan bir fizyoterapi yaklaşımıdır."
+bilgiKutusu:
+  - { etiket: "Düzlem", deger: "Yan, ön-arka ve dönme" }
+  - { etiket: "Seans süresi", deger: "Genellikle 45 – 60 dk" }
+  - { etiket: "Seans sıklığı", deger: "Haftada 1 – 3" }
+  - { etiket: "Ev egzersizi", deger: "Her gün" }
+  - { etiket: "Yaş grubu", deger: "Çocuk, ergen, yetişkin" }
+  - { etiket: "Uygulayan", deger: "Fizyoterapist" }
+  - { etiket: "Uygulama yeri", deger: "Kendi evinizde" }
+  - { etiket: "İlk değerlendirme", deger: "Ücretsiz" }
+endikasyonBaslik: "Kimler için uygundur?"
+endikasyonGiris: "3 boyutlu skolyoz terapisi, aşağıdaki durumların yönetiminde kullanılır:"
 endikasyonlar:
-  - { baslik: "Omurga Eğriliği ve Deformiteleri", metin: "Skolyoz, omurganın yan eğriliği ile karakterizedir ve bu durum, omurgada çarpıklıklara ve deformitelere neden olabilir. Tedavi süreci, omurgadaki bu eğrilikleri düzeltmeyi ve deformiteleri azaltmayı hedefler." }
-  - { baslik: "Ağrı ve Rahatsızlık", metin: "Skolyoz, sırt ve bel ağrısı gibi semptomlara neden olabilir. Tedavi süreci, bu ağrıları azaltmayı ve hastanın yaşam kalitesini artırmayı amaçlar." }
-  - { baslik: "Postür Problemleri", metin: "Skolyoz, hastanın postüründe belirgin değişikliklere neden olabilir. Tedavi, doğru postürü yeniden kazanmayı ve omurga hizasını korumayı amaçlar." }
-  - { baslik: "Kas Dengesi Bozuklukları", metin: "Skolyoz, omurganın eğriliği nedeniyle kas dengesinde bozulmalara yol açabilir. Tedavi süreci, kas dengesini restore etmeyi ve güçlendirmeyi hedefler." }
-  - { baslik: "Fonksiyonel Kısıtlamalar", metin: "İleri derecede skolyoz vakaları, hastanın günlük yaşam aktivitelerini etkileyebilir. Tedavi, fonksiyonel bağımsızlığı artırmayı ve hastanın yaşam kalitesini iyileştirmeyi hedefler." }
-surecGiris: "Skolyoz, omurganın yana doğru eğriliği ile karakterize olan yaygın bir omurga rahatsızlığıdır. Hem çocukluk döneminde hem de yetişkinlikte ortaya çıkabilen bu durum, fiziksel rahatsızlıkların yanı sıra psikolojik etkiler de yaratabilir. Skolyozun belirtileri ve etkileri kişiden kişiye değişebilir ve tedavi süreci de bu farklılıklara göre şekillenir. Skolyoz tedavi süreci, hastanın skolyozunun derecesine, semptomlarının şiddetine, yaşına ve genel sağlık durumuna bağlı olarak değişkenlik gösterebilir. Ancak, genel olarak şu adımları içerir: değerlendirme, tedavi planının oluşturulması, uygulama ve egzersizler, koruma ve iyileşme süreci. Bu adımlar, hastanın bireysel ihtiyaçlarına göre özelleştirilir ve uzman bir ekibin yönlendirmesiyle gerçekleştirilir."
+  - { baslik: "Omurga eğriliği ve deformiteleri", metin: "İdiyopatik skolyozu olan çocuk ve ergenlerde eğriliğin ilerlemesini yavaşlatmaya yönelik düzeltici egzersizler." }
+  - { baslik: "Korse kullananlar", metin: "Korse tedavisi gören hastalarda korsenin etkisini destekleyen ve gövde kaslarını koruyan program." }
+  - { baslik: "Postür problemleri", metin: "Gövde kayması, omuz ve kalça asimetrisi ile sırt kamburluğu veya düzleşmesi gibi duruş bozuklukları." }
+  - { baslik: "Kas dengesi bozuklukları", metin: "Eğriliğin iç ve dış tarafındaki kaslar arasındaki güç ve esneklik dengesizliği." }
+  - { baslik: "Ağrı ve rahatsızlık", metin: "Yetişkin skolyozunda sırt ve bel ağrısının azaltılması ve günlük aktivitelerin kolaylaştırılması." }
+  - { baslik: "Fonksiyonel kısıtlamalar", metin: "Göğüs kafesi hareketindeki azalmaya bağlı nefes kapasitesi kaybı ve çabuk yorulma." }
+surecBaslik: "Tedavi süreci adım adım"
+surecGiris: "3 boyutlu terapide egzersizler herkes için aynı değildir; eğriliğin tipine göre (tek eğrilik, çift eğrilik, bel ya da sırt ağırlıklı) kişiye özel olarak seçilir ve hasta, düzeltmeyi kendi başına yapabilecek hale gelene kadar öğretilir."
 adimlar:
-  - { baslik: "Değerlendirme ve Tanı", metin: "Tedavi süreci, uzman bir fizyoterapist veya ortopedist tarafından yapılan kapsamlı bir değerlendirme ile başlar. Bu değerlendirme, hastanın omurga yapısı, skolyozunun derecesi, semptomları ve genel sağlık durumunu değerlendirmeyi içerir. Gerekirse, röntgen ve diğer görüntüleme testleri yapılabilir." }
-  - { baslik: "Tedavi Planının Oluşturulması", metin: "Değerlendirme sonuçlarına dayanarak, uzmanlar hastanın skolyozuyla başa çıkması için bir tedavi planı oluşturur. Bu plan, hastanın ihtiyaçlarına, semptomlarına ve yaşına uygun olarak kişiselleştirilir. Tedavi planı, egzersizler, postür eğitimi, korse terapisi, manuel terapi ve diğer terapi yöntemlerini içerebilir." }
-  - { baslik: "Uygulama ve Egzersizler", metin: "Tedavi planı, düzenli olarak yapılan özel egzersizler ve terapileri içerir. Bu egzersizler, kas güçlendirme, postür düzeltme ve omurga esnekliğini artırma gibi hedeflere yöneliktir. Uzmanlar, hastanın doğru teknikleri öğrenmesine ve egzersiz programını düzenli olarak uygulamasına yardımcı olur." }
-  - { baslik: "Koruma ve İyileşme Süreci", metin: "Tedavinin bir parçası olarak, hastaya skolyozunun ilerlemesini önlemek için koruyucu önlemler alması öğretilir. Bunlar arasında düzgün postür alışkanlıkları, omurga destekleyici egzersizler ve yaşam tarzı değişiklikleri yer alabilir. Ayrıca, hastanın iyileşme süreci düzenli olarak izlenir ve tedavi planı gerektiğinde ayarlanır." }
+  - { baslik: "Değerlendirme ve eğrilik analizi", metin: "Röntgen ve hekim raporu incelenir; eğriliğin tipi, gövde dönüklüğü, sırt kavisleri, esneklik ve solunum değerlendirilir." }
+  - { baslik: "Kişiye özel plan", metin: "Hangi bölgelerin uzatılacağı, hangi yöne doğru düzeltme yapılacağı ve hangi pozisyonlarda çalışılacağı belirlenir." }
+  - { baslik: "Düzeltici egzersiz ve solunum", metin: "Omurga uzatılır, eğrilik ters yöne doğru düzeltilir; düzeltici nefesle göğüs kafesinin çökük tarafı açılır ve bu duruş kas gücüyle korunur." }
+  - { baslik: "Günlük yaşama aktarma", metin: "Düzeltilmiş duruş; oturma, ayakta durma, ders çalışma ve uyku pozisyonlarına aktarılır; ev programı düzenli olarak kontrol edilir." }
+avantajBaslik: "3 boyutlu yaklaşımın farkı"
+avantajlar:
+  - { baslik: "Eğriliğe özgü", metin: "Genel sırt egzersizleri yerine, kişinin kendi eğrilik tipine göre tasarlanmış düzeltici hareketler kullanılır." }
+  - { baslik: "Üç düzlemde düzeltme", metin: "Yana eğrilik, omur dönmesi ve sırt kavisleri birlikte ele alınır." }
+  - { baslik: "Düzeltici solunum", metin: "Göğüs kafesinin çökük tarafına yönlendirilen nefesle hem duruş hem de solunum desteklenir." }
+  - { baslik: "Kendi kendini düzeltme", metin: "Hasta, günlük hayatında duruşunu kendisi düzeltebilmeyi öğrenir; bu, tedavinin kalıcılığını artırır." }
+  - { baslik: "Korse tedavisini destekler", metin: "Korse kullanan hastalarda kas zayıflığını önler ve korse etkisini güçlendirir." }
+  - { baslik: "Özgüven ve farkındalık", metin: "Özellikle ergenlerde vücut farkındalığı ve görünümle ilgili özgüven olumlu etkilenir." }
+onemli:
+  baslik: "Başarının anahtarı: düzenli ev egzersizi"
+  metin: "3 boyutlu skolyoz terapisinin etkisi, seanslardan çok her gün yapılan ev egzersizlerine bağlıdır. Büyüme döneminde eğriliğin ilerleme riski en yüksek olduğu için egzersizlere ara verilmemesi ve hekim kontrollerinin aksatılmaması önemlidir."
+sss:
+  - { soru: "3 boyutlu skolyoz terapisi ile klasik egzersiz arasındaki fark nedir?", cevap: "Klasik sırt egzersizleri her iki tarafı eşit çalıştırır. 3 boyutlu terapide ise egzersizler eğriliğin tipine göre asimetrik olarak seçilir; omurga uzatılır, ters yöne düzeltilir ve düzeltici solunumla desteklenir." }
+  - { soru: "Hangi yaşta başlanmalı?", cevap: "Skolyoz tanısı konduğunda, özellikle büyüme devam ediyorsa mümkün olan en erken dönemde başlanması önerilir. Egzersizleri doğru uygulayabilecek çocuklarda genellikle 8–10 yaş civarından itibaren etkili şekilde uygulanabilir." }
+  - { soru: "Korse kullanırken egzersiz yapılır mı?", cevap: "Evet, önerilir. Egzersizler korsenin çıkarıldığı saatlerde yapılır ve korse tedavisinin etkisini destekler." }
+  - { soru: "Her gün ne kadar egzersiz yapmalıyım?", cevap: "Genellikle günde 20–30 dakikalık düzenli bir ev programı önerilir. Süre ve içerik, eğriliğinize ve tedavi evrenize göre fizyoterapistiniz tarafından belirlenir." }
+  - { soru: "Yetişkinlerde uygulanır mı?", cevap: "Evet. Yetişkinlerde amaç genellikle ağrıyı azaltmak, duruşu iyileştirmek ve eğriliğin ilerlemesini yavaşlatmaktır." }
 guncelleme: 2026-09-25
 ---
-## Bia Sağlık'ta Skolyoz Terapisi ile Ağrıları Hafifletin ve İyileşmeyi Destekleyin
+## Neden üç boyutlu bir yaklaşım?
 
-Bia Sağlık, skolyoz tedavisinde uzmanlaşmış bir ekip ve kişiselleştirilmiş bir yaklaşım sunar. Skolyoz tedavisi, hastanın durumuna ve semptomlarına bağlı olarak değişen bir süreçtir. Uzmanlarımız, hastaların skolyozunun derecesini ve etkilerini değerlendirmek için kapsamlı bir başlangıç değerlendirmesi yaparlar. Bu değerlendirme sonucunda, her hastanın ihtiyaçlarına uygun bir tedavi planı oluşturulur.
+Skolyozda omurga üç düzlemde birden bozulur:
 
-Skolyoz tedavisinde, öncelikle omurga eğriliğini düzeltmeyi ve ağrıyı azaltmayı hedefleyen çeşitli terapi yöntemleri kullanılır. Bu yöntemler arasında özel egzersizler, manüel terapi, postür eğitimi ve korse terapisi bulunur. Tedavi süreci, hastanın semptomlarına ve tedaviye verdiği yanıta göre düzenlenir ve iyileşme süreci düzenli olarak izlenir.
+| Düzlem | Ne olur? | Görünüm |
+| --- | --- | --- |
+| **Yan düzlem (frontal)** | Omurga sağa veya sola eğrilir | Omuz ve kalça seviyelerinde farklılık |
+| **Ön-arka düzlem (sagittal)** | Sırt ve beldeki doğal kavisler azalır veya artar | Düz sırt ya da kamburluk |
+| **Dönme (transvers)** | Omurlar kendi ekseni etrafında döner | Kaburga çıkıntısı, sırtta asimetri |
+
+Yalnızca bir düzlemi hedefleyen egzersizler eğriliği tam olarak ele alamaz. 3 boyutlu skolyoz terapisi, bu üç bileşeni aynı anda düzeltmeye çalışır.
+
+## Bia Sağlık'ta 3 boyutlu skolyoz terapisi
+
+Bia Sağlık, skolyoz tedavisinde kişiselleştirilmiş bir yaklaşım sunar. Uzman fizyoterapistlerimiz, skolyozun derecesini ve etkilerini değerlendirmek için kapsamlı bir başlangıç değerlendirmesi yapar ve her hastanın ihtiyaçlarına uygun bir tedavi planı oluşturur. Tedavi, ortopedi hekiminizin takibiyle birlikte yürütülür.
+
+Skolyoz hakkında genel bilgi için: [skolyoz tedavisi](/skolyoz-tedavisi).

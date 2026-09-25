@@ -1,6 +1,6 @@
 ---
 baslik: "Mat Pilates"
-altBaslik: "Mat Pilates ile Vücudunuzun Esneklik Yeteneğini Geliştirin"
+altBaslik: "Fizyoterapist eşliğinde, evinizde güvenli klinik pilates"
 kategori: "Tedavi Yöntemleri"
 sira: 5
 eskiUrl: "/mat-pilates"
@@ -8,35 +8,69 @@ seoBaslik: "Evde Klinik Mat Pilates | Bia Sağlık Fizik Tedavi"
 aciklama: "Fizyoterapist eşliğinde evde mat pilates. Duruş, core gücü, esneklik ve denge için bel ve boyun sağlığını gözeten güvenli program."
 kisaAciklama: "Fizyoterapist eşliğinde duruş, core gücü, esneklik ve dengeyi geliştiren egzersizler."
 hero: "../../assets/img/mat-pilates-hero.jpg"
-heroAlt: "Mat Pilates uygulaması"
+heroAlt: "Pilates matları üzerinde dört ayak pozisyonunda egzersiz yapan kadınlar"
 gorsel: "../../assets/img/mat-pilates-1.jpg"
-gorselAlt: "Fizyoterapist evde mat pilates uyguluyor"
-ozet: "Eğer güçlenmek, esneklik kazanmak ve vücut farkındalığını artırmak istiyorsanız, Mat Pilates sizin için harika bir seçenek olabilir. Başlangıç seviyesinden ileri seviyelere kadar uygun dersler bulabilir ve kendi hedeflerinize doğru bizimle birlikte ilerleyebilirsiniz."
-endikasyonBaslik: "Hangi durumlarda uygulanır?"
-endikasyonGiris: "Mat pilates yapmadan önce dikkate alınması gereken bazı sağlık durumları:"
+gorselAlt: "Evinde pilates matı üzerinde sırtüstü egzersiz yapan kadın"
+ozet: "Mat pilates, yalnızca bir mat ve vücut ağırlığıyla yapılan; gövdeyi saran derin kasları (core) güçlendiren, esnekliği, dengeyi ve duruşu geliştiren bir egzersiz yöntemidir. Bia Sağlık'ta mat pilates, fizyoterapistimiz tarafından sağlık durumunuz değerlendirilerek ve bel, boyun veya eklem sorunlarınız gözetilerek evinizde birebir uygulanır."
+bilgiKutusu:
+  - { etiket: "Seans süresi", deger: "Genellikle 45 – 60 dk" }
+  - { etiket: "Seans sıklığı", deger: "Haftada 2 – 3" }
+  - { etiket: "Ekipman", deger: "Mat, bant, top" }
+  - { etiket: "Seviye", deger: "Başlangıçtan ileriye" }
+  - { etiket: "Ders tipi", deger: "Birebir" }
+  - { etiket: "Uygulayan", deger: "Fizyoterapist" }
+  - { etiket: "Uygulama yeri", deger: "Kendi evinizde" }
+  - { etiket: "İlk değerlendirme", deger: "Ücretsiz" }
+endikasyonBaslik: "Mat pilates kimler için uygundur?"
+endikasyonGiris: "Fizyoterapist eşliğinde yapılan mat pilates, sağlıklı bireylerden rehabilitasyon sürecindeki hastalara kadar geniş bir kitleye uyarlanabilir:"
 endikasyonlar:
-  - { baslik: "Bel Fıtığı veya Bel Ağrısı", metin: "Bel ağrısı veya bel fıtığı olanlar, mat pilates egzersizlerini yapmadan önce bir doktora danışmalıdır. Bazı pilates hareketleri, bel bölgesine fazla baskı yapabilir ve bel sorunlarını kötüleştirebilir." }
-  - { baslik: "Yeni Ameliyat Geçirenler", metin: "Yakın zamanda cerrahi bir işlem geçiren kişiler, ameliyat sonrası iyileşme sürecini tamamlamadan önce mat pilates yapmadan önce doktorlarına danışmalıdır." }
-  - { baslik: "Yüksek Tansiyon", metin: "Yüksek tansiyonu olanlar, mat pilates yapmadan önce bir doktora danışmalıdır çünkü bazı pozisyonlar tansiyonu etkileyebilir." }
-  - { baslik: "Kalp Hastalığı", metin: "Kalp hastalığı olanlar, mat pilates yapmadan önce bir kardiyologa danışmalıdır. Yoğun bir egzersiz rutini, kalp sorunları olan kişilerde risk oluşturabilir." }
-  - { baslik: "Hamilelik", metin: "Hamilelik döneminde mat pilates yapmadan önce doktorunuza danışmalısınız. Hamilelik sırasında belirli pozisyonlar ve hareketler uygun olmayabilir." }
-  - { baslik: "Osteoporoz", metin: "Osteoporozu olanlar, özellikle omurga üzerinde baskı yaratan pozisyonlardan kaçınmalı veya uygun modifikasyonlarla egzersiz yapmalıdır." }
-  - { baslik: "Ciddi Yaralanmalar", metin: "Ciddi bir yaralanma geçirenler, mat pilates yapmadan önce rehabilitasyon sürecini tamamlamalı ve doktorlarına danışmalıdır." }
-surecGiris: "Mat pilates, bazı durumlarda rehabilitasyon sürecine veya tedavi planına yardımcı olabilir. Örneğin, bel ağrısı, omurga rahatsızlıkları veya yaralanmalar sonrası rehabilitasyon sürecinde mat pilates, çekirdek gücünü artırarak ve vücuttaki esnekliği geliştirerek iyileşmeyi destekleyebilir. Ayrıca, belirli sağlık koşulları veya kronik rahatsızlıklarla birlikte yapılan mat pilates, semptomları hafifletebilir veya yaşam kalitesini artırabilir. Mat pilates, bir tedavi planının bir parçası olarak kullanılacaksa, genellikle bir fizyoterapist veya rehabilitasyon uzmanı tarafından önerilir ve yönlendirilir. Bu profesyonel, bireyin sağlık durumunu değerlendirecek ve uygun bir mat pilates programı oluşturacaktır. Bu program, bireyin ihtiyaçlarına ve sağlık koşullarına göre özelleştirilebilir."
+  - { baslik: "Bel ve boyun ağrısı yaşayanlar", metin: "Gövde kaslarını güçlendirerek omurgayı destekler; kronik bel ve boyun ağrısının yönetiminde etkili bir egzersiz yöntemidir." }
+  - { baslik: "Duruş bozukluğu olanlar", metin: "Uzun süre masa başında çalışanlarda öne düşük omuz ve boyun, kambur duruş gibi sorunların düzeltilmesine yardımcı olur." }
+  - { baslik: "Rehabilitasyonu tamamlayanlar", metin: "Bel fıtığı, diz veya omuz rehabilitasyonu sonrasında kazanımları korumak ve güçlenmeye devam etmek isteyenler." }
+  - { baslik: "Doğum sonrası dönem", metin: "Hekim onayıyla, karın ve pelvik taban kaslarının yeniden güçlendirilmesi ve duruşun düzeltilmesi." }
+  - { baslik: "İleri yaştakiler", metin: "Denge, esneklik ve kas gücünü koruyarak düşme riskini azaltmak isteyen yaşlı bireyler; hareketler seviyeye göre uyarlanır." }
+  - { baslik: "Sporcular", metin: "Core gücü, esneklik ve vücut farkındalığını artırarak performansı destekleme ve sakatlanmayı önleme." }
+surecBaslik: "Mat pilatesin 5 temel prensibi"
+surecGiris: "Mat pilates programı, tüm egzersizlerde uygulanan beş temel prensip üzerine kurulur. İlk seanslarda bu prensipler öğretilir, ardından hareketler seviyenize göre ilerletilir."
 adimlar:
-  - { baslik: "Çekirdek Güç (Core Strength)", metin: "Mat pilates, özellikle karın, sırt ve kalça kaslarını içeren vücudun çekirdek bölgesinin güçlendirilmesine odaklanır. Bu, postürü destekler, bel ağrısını azaltır, omurga sağlığını iyileştirir ve vücutta dengeyi artırır." }
-  - { baslik: "Esneklik (Flexibility)", metin: "Mat pilates, vücuttaki esnekliği artırmak için tasarlanmıştır. Esneklik, hareket aralığını genişletir, kaslarda gerginliği azaltır, sakatlanma riskini azaltır ve vücudu daha hareketli hale getirir." }
-  - { baslik: "Denge (Balance)", metin: "Mat pilates egzersizleri, dengeyi artırmaya yöneliktir. Bu, vücudun stabilitesini ve denge yeteneğini geliştirir. Denge, günlük aktivitelerde ve spor performansında önemli bir rol oynar ve yaşlanma sürecinde düşme riskini azaltmaya yardımcı olur." }
-  - { baslik: "Postür (Posture)", metin: "Mat pilates, doğru postürü desteklemek için çalışır. Doğru postür, omurga sağlığını korur, sırt ağrısını azaltır, solunum kapasitesini artırır ve genel olarak daha iyi bir duruş sağlar." }
-  - { baslik: "Nefes (Breath)", metin: "Mat pilates, egzersiz sırasında doğru nefes almayı vurgular. Nefes kontrolü, kasları güçlendirmeye yardımcı olur, stresi azaltır, oksijen alımını artırır ve zihinsel konsantrasyonu geliştirir." }
+  - { baslik: "Core gücü (merkez)", metin: "Karın, bel ve pelvik taban kaslarından oluşan merkez bölge her hareketin başlangıç noktasıdır; omurgayı korur ve destekler." }
+  - { baslik: "Esneklik", metin: "Kaslar kontrollü şekilde uzatılarak eklemlerin hareket açıklığı artırılır ve kas gerginliği azaltılır." }
+  - { baslik: "Denge", metin: "Tek taraflı ve dengeleyici hareketlerle vücudun iki tarafı arasındaki uyum ve denge geliştirilir." }
+  - { baslik: "Postür (duruş)", metin: "Omurganın nötral pozisyonu öğretilir; doğru duruş egzersizlerden günlük hayata aktarılır." }
+  - { baslik: "Nefes", metin: "Hareketle uyumlu, göğüs kafesini yanlara açan nefes, derin kasların çalışmasını destekler ve odaklanmayı artırır." }
+avantajBaslik: "Mat pilatesin faydaları"
+avantajlar:
+  - { baslik: "Güçlü bir merkez", metin: "Derin karın ve sırt kasları güçlenir; bel ve boyun ağrılarının azaltılmasına ve önlenmesine yardımcı olur." }
+  - { baslik: "Daha iyi duruş", metin: "Omurga hizası ve vücut farkındalığı gelişir; günlük hayatta daha dik ve rahat durursunuz." }
+  - { baslik: "Esneklik ve hareket", metin: "Kasların esnekliği ve eklemlerin hareket açıklığı artar." }
+  - { baslik: "Denge ve koordinasyon", metin: "Denge ve koordinasyon gelişir; özellikle ileri yaşta düşme riski azalır." }
+  - { baslik: "Düşük darbe, eklem dostu", metin: "Zıplama ve ağır yük içermez; eklemler üzerinde fazla yük oluşturmadan güçlenmeyi sağlar." }
+  - { baslik: "Birebir ve evde", metin: "Hareketler sağlık durumunuza göre uyarlanır; fizyoterapistinizin gözetiminde, evinizde güvenle çalışırsınız." }
+onemli:
+  baslik: "Başlamadan önce dikkat edilmesi gereken durumlar"
+  metin: "Aşağıdaki durumlarda mat pilatese başlamadan önce hekiminize ve fizyoterapistinize danışmanız gerekir; program bu durumlara göre uyarlanır veya ertelenir: akut bel fıtığı veya şiddetli bel ağrısı, yeni geçirilmiş ameliyat, kontrolsüz yüksek tansiyon, kalp hastalığı, hamilelik, ileri osteoporoz ve iyileşmemiş ciddi yaralanmalar."
+sss:
+  - { soru: "Mat pilates ile reformer pilates arasındaki fark nedir?", cevap: "Mat pilates yalnızca mat, vücut ağırlığı ve küçük ekipmanlarla yapılır; bu yüzden evde uygulanabilir. Reformer pilates ise yaylı özel bir alet gerektirir. Mat pilates, temel prensipleri öğrenmek ve günlük hayata aktarmak için çok etkili bir başlangıçtır." }
+  - { soru: "Bel fıtığım var, pilates yapabilir miyim?", cevap: "Akut dönem geçtikten sonra, fizyoterapist eşliğinde ve fıtığınıza uygun seçilmiş hareketlerle yapılan pilates bel fıtığında faydalıdır. Bazı hareketlerden kaçınılması gerektiği için mutlaka değerlendirme sonrası başlanmalıdır." }
+  - { soru: "Hiç spor yapmadım, bana uygun mu?", cevap: "Evet. Program başlangıç seviyesinden başlar ve temel prensipler öğretildikten sonra hareketler yavaş yavaş ilerletilir." }
+  - { soru: "Ne kadar sürede fark hissederim?", cevap: "Pek çok kişi birkaç hafta içinde duruş, esneklik ve vücut farkındalığında değişiklik hisseder. Kalıcı güçlenme için düzenli, haftada 2 – 3 seanslık bir çalışma önerilir." }
+  - { soru: "Evde ne gerekir?", cevap: "Matın serilebileceği küçük bir alan yeterlidir. Mat, direnç bandı ve küçük top gibi ekipmanları gerektiğinde fizyoterapistimiz getirir." }
 guncelleme: 2026-09-25
 ---
-## Bia Sağlıkta Mat Pilates Hizmeti
+## Mat pilates nedir?
 
-Mat pilates hizmeti, bir pilates eğitmeni veya antrenörü tarafından verilir. Bu hizmet genellikle bireysel dersler veya grup dersleri şeklinde sunulabilir. Bir pilates matı ve gerekli diğer ekipmanlar genellikle sağlanır veya kişiler kendi matlarını getirirler.
+Mat pilates, 20. yüzyılın başında Joseph Pilates tarafından geliştirilen egzersiz yönteminin, özel aletler yerine yalnızca bir mat üzerinde uygulanan biçimidir. Egzersizler vücudun farklı bölgelerini hedef alır ve pilates prensiplerine dayanır: merkez gücü, kontrol, nefes, akıcılık ve duruş.
 
-Mat pilates, vücutta güç, esneklik ve dengeyi artırmak için çeşitli egzersizler içerir.
+Bia Sağlık'ta mat pilates, klinik pilates yaklaşımıyla uygulanır: yani egzersizler bir fizyoterapist tarafından, sağlık durumunuz ve varsa bel, boyun veya eklem sorunlarınız değerlendirilerek seçilir. Bu sayede pilates hem genel sağlık hem de tedavi amacıyla güvenle yapılabilir.
 
-Egzersizler genellikle vücudun çeşitli bölgelerini hedef alır ve pilates prensiplerine dayanır, bunlar arasında kontrol, merkezleme, doğru nefes alma ve akış bulunur.
+## Klinik mat pilates ile grup dersi arasındaki fark
 
-Mat pilates, genellikle kas gücünü artırmak, postürü düzeltmek, esnekliği geliştirmek ve stresi azaltmak için tercih edilir. Bu hizmeti almak isteyenler genellikle bir pilates stüdyosuna kaydolabilir veya fitness merkezlerinde mat pilates derslerine katılabilirler.
+| | Klinik mat pilates (Bia Sağlık) | Standart grup dersi |
+| --- | --- | --- |
+| **Eğitmen** | Fizyoterapist | Pilates eğitmeni |
+| **Değerlendirme** | Başlamadan önce sağlık değerlendirmesi | Genellikle yok |
+| **Program** | Sağlık durumunuza göre kişiye özel | Herkes için aynı akış |
+| **Ağrı ve rahatsızlıklar** | Hareketler buna göre uyarlanır | Uyarlama sınırlı |
+| **Yer** | Kendi evinizde, birebir | Stüdyoda, grup halinde |
+
+İlgili hizmetlerimiz: [kronik ağrı tedavisi](/kronik-agri), [pelvik taban rehabilitasyonu](/pelvik-taban-rehabilitasyonu), [skolyoz tedavisi](/skolyoz-tedavisi).

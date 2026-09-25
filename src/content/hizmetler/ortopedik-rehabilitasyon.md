@@ -1,38 +1,79 @@
 ---
 baslik: "Ortopedik ve Sporcu Rehabilitasyonu"
-altBaslik: "Ortopedik Sporcu Rehabilitasyonu Nedir?"
+altBaslik: "Yaralanmadan önceki gücünüze ve hareketinize geri dönün"
 kategori: "Ortopedik"
 sira: 1
 eskiUrl: "/ortopedik-rehabilitasyon"
 seoBaslik: "Ortopedik ve Sporcu Rehabilitasyonu Evde | Bia Sağlık"
 aciklama: "Spor yaralanması, bağ yırtığı, tendinit ve ameliyat sonrası evde ortopedik rehabilitasyon. Güç ve hareket açıklığını geri kazanın."
 kisaAciklama: "Spor yaralanmaları, bağ ve tendon sorunları ile ameliyat sonrası güç ve hareket kazanımı."
-hero: "../../assets/img/ortopedik-rehabilitasyon-hero.jpg"
-heroAlt: "Ortopedik ve Sporcu Rehabilitasyonu uygulaması"
+hero: "../../assets/img/ortopedik-rehabilitasyon-2.jpg"
+heroAlt: "Fizyoterapist, hastanın dizine kinezyo bant uyguluyor"
 gorsel: "../../assets/img/ortopedik-rehabilitasyon-1.jpg"
-gorselAlt: "Fizyoterapist evde ortopedik ve sporcu rehabilitasyonu uyguluyor"
-ozet: "Ortopedik sporcu rehabilitasyonu, sporcularda ortaya çıkan kas, kemik veya eklem yaralanmalarını tedavi etmek ve sporcuların en kısa sürede eski performanslarına geri dönmelerini sağlamak için özelleştirilmiş bir tıbbi yaklaşımdır. Bu tür rehabilitasyon programları, sporcularda yaygın olarak görülen yaralanmaların tedavisi ve önlenmesi konusunda uzmanlaşmış sağlık profesyonelleri tarafından uygulanır."
-endikasyonBaslik: "Hangi durumlarda uygulanır?"
-endikasyonGiris: "Ortopedik rehabilitasyon bir dizi hastalığı ve durumu içerir. İşte bu alanda rehabilitasyonu kapsayan bazı yaygın hastalıklar ve durumlar:"
+gorselAlt: "Fizyoterapist, hastanın bileğine koruyucu atel yerleştiriyor"
+ozet: "Ortopedik rehabilitasyon; kas, kemik, eklem, bağ ve tendon yaralanmaları ile ortopedik ameliyatlardan sonra ağrıyı azaltmaya, hareket açıklığını, kas gücünü ve fonksiyonu yeniden kazandırmaya yönelik fizyoterapi programıdır. Sporcularda ise hedef, performansa güvenli ve tekrar sakatlanmadan dönüştür. Bia Sağlık'ta tedavi, fizyoterapistimizin getirdiği ekipmanla kendi evinizde uygulanır."
+bilgiKutusu:
+  - { etiket: "Seans süresi", deger: "Genellikle 45 – 60 dk" }
+  - { etiket: "Seans sıklığı", deger: "Haftada 2 – 3" }
+  - { etiket: "Tedavi süresi", deger: "Yaralanmaya göre 4 – 12 hafta" }
+  - { etiket: "Uygulayan", deger: "Fizyoterapist" }
+  - { etiket: "Yöntemler", deger: "Egzersiz, manuel terapi, bantlama" }
+  - { etiket: "Ev programı", deger: "Var" }
+  - { etiket: "Uygulama yeri", deger: "Kendi evinizde" }
+  - { etiket: "İlk değerlendirme", deger: "Ücretsiz" }
+endikasyonBaslik: "Ortopedik rehabilitasyon hangi durumlarda uygulanır?"
+endikasyonGiris: "Ortopedik rehabilitasyon bir dizi yaralanmayı ve durumu kapsar:"
 endikasyonlar:
-  - { baslik: "Eklem ve Kemik Kırıkları", metin: "Kırık sonrası rehabilitasyon, kırığın iyileşmesini ve eklem veya kemik fonksiyonunun geri kazanılmasını içerir. Bu, hareketin kısıtlanması veya ortezlerin kullanılması gibi tedavileri de içerebilir." }
-  - { baslik: "Eklem Hastalıkları", metin: "Osteoartrit gibi eklem hastalıkları, eklem ağrısı, sertlik ve fonksiyon kaybına neden olabilir. Ortopedik rehabilitasyon, ağrıyı azaltmak, eklem hareketliliğini artırmak ve hastanın yaşam kalitesini iyileştirmek için fizik tedavi ve egzersiz programlarını içerir." }
-  - { baslik: "Kemik Tümörleri", metin: "Kemik tümörleri cerrahi müdahale veya radyoterapi gibi agresif tedavilere yanıt verebilir. Rehabilitasyon, cerrahi sonrası hareket kaybını azaltmak, güç ve esnekliği artırmak ve hastanın günlük aktivitelerine dönmesine yardımcı olmak için gerekebilir." }
-  - { baslik: "Eklem ve Kemik Ağrıları", metin: "Kronik eklem veya kemik ağrıları, yaşam kalitesini önemli ölçüde etkileyebilir. Fizik tedavi, egzersiz, ağrı yönetimi stratejileri ve manuel terapi gibi rehabilitasyon yaklaşımları bu durumların yönetiminde önemli rol oynar." }
-  - { baslik: "Tendinit veya Tendinopatiler", metin: "Tendinit veya tendinopati, tendonların iltihaplanması veya hasar görmesi durumudur. Rehabilitasyon, tendonların iyileşmesini desteklemek, gücünü artırmak ve esnekliğini geri kazanmak için egzersiz ve fizik tedaviyi içerir." }
-  - { baslik: "Bağ Doku Yırtıkları", metin: "Ligament yaralanmaları veya bağ doku yırtıkları, eklem stabilitesini etkileyebilir ve hareketi kısıtlayabilir. Rehabilitasyon, bağların iyileşmesini desteklemek, kas gücünü yeniden kazanmak ve eklem stabilitesini artırmak için egzersizler ve rehabilitasyon protokolleri içerir." }
-  - { baslik: "Eklem ve Kemik Ameliyatları Sonrası Dönem", metin: "Eklem veya kemik cerrahisi sonrası rehabilitasyon, hastanın ameliyat sonrası dönemde hareket kabiliyetini geri kazanmasını, yara iyileşmesini teşvik etmeyi ve ameliyat sonrası komplikasyonları önlemeyi amaçlar. Bu rehabilitasyon, fizik tedavi, egzersiz programları ve uygun yara bakımını içerebilir." }
-surecGiris: "Kişinin ihtiyaçlarına ve hedeflerine göre değişebilir. Örneğin, bir kişi eklem kırığı sonucu kaybettiği fonksiyonları geri kazanmak isteyebilirken, başka bir kişi eklem hastalığı sonucu elde ettiği hasarları en aza indirmek isteyebilir. Amacımız, kişinin hayat kalitesini ve işlevselliğini en yüksek düzeyde geri kazandırmaktır. Ayrıca, rehabilitasyon sürecinde kişinin ailesi veya yakın çevresi de aktif olarak yer almalıdır. Bu, kişinin tedaviye daha iyi adapte olmasını ve uzun vadeli sonuçların daha iyi olmasını sağlar. Aile ve yakın çevrenin, kişinin tedaviye nasıl dahil edileceği, tedavi sürecinde nasıl destekleneceği ve rehabilitasyon sonrası hayatta nasıl devam edeceği gibi konularda bilgilendirilmeleri önemlidir."
+  - { baslik: "Bağ yaralanmaları", metin: "Ön çapraz bağ (ÖÇB) yırtığı, ayak bileği burkulması ve diz yan bağ yaralanmaları; ameliyatlı veya ameliyatsız tedavi süreci." }
+  - { baslik: "Tendinit ve tendinopatiler", metin: "Omuz, dirsek (tenisçi ve golfçü dirseği), diz ve aşil tendonundaki iltihap ve aşırı kullanım sorunları." }
+  - { baslik: "Menisküs ve kıkırdak sorunları", metin: "Menisküs yırtığı ve kıkırdak hasarında ağrının azaltılması ve dizi destekleyen kasların güçlendirilmesi." }
+  - { baslik: "Eklem hastalıkları", metin: "Osteoartrit (kireçlenme) gibi eklem hastalıklarında ağrı, sertlik ve fonksiyon kaybının azaltılması." }
+  - { baslik: "Omuz sorunları", metin: "Donuk omuz, rotator manşet yırtığı, sıkışma sendromu ve omuz çıkığı sonrası rehabilitasyon." }
+  - { baslik: "Ameliyat sonrası dönem", metin: "Diz ve kalça protezi, bağ, menisküs ve omuz ameliyatları sonrasında ameliyatın başarısını destekleyen rehabilitasyon." }
+  - { baslik: "Kas yırtıkları ve zorlanmalar", metin: "Arka adale, kasık ve baldır kası gibi sporcularda sık görülen kas yaralanmaları." }
+surecBaslik: "Tedavi süreci adım adım"
+surecGiris: "Rehabilitasyon; yaralanmanın türüne, ameliyat yapılıp yapılmadığına ve kişinin hedeflerine göre planlanır. Birinin hedefi merdiveni ağrısız çıkmak, bir başkasınınki sahaya geri dönmek olabilir."
 adimlar:
-  - { baslik: "Değerlendirme ve Tanı Koyma", metin: "Öncelikle, sporcu ve yaralanma hakkında detaylı bir değerlendirme yapılır. Bu, yaralanmanın türü, şiddeti ve nedeni hakkında bilgi toplamayı içerir. Gerekirse, görüntüleme testleri (örneğin, MRI, X-ışınları) kullanılabilir." }
-  - { baslik: "Tedavi Planı Oluşturma", metin: "Değerlendirme sonuçlarına dayanarak, sporcunun ihtiyaçlarına ve yaralanma türüne uygun bir tedavi planı oluşturulur. Bu plan genellikle birden fazla disiplinden uzmanların (fizyoterapistler, spor doktorları, ortopedistler vb.) katılımını gerektirebilir." }
-  - { baslik: "Rehabilitasyon Egzersizleri", metin: "Sporcu için özel olarak tasarlanmış egzersiz programları uygulanır. Bu egzersizler, kas gücünü artırmak, esnekliği artırmak, dengeyi geliştirmek ve yaralanma sonrası fonksiyonu geri kazanmak için tasarlanmıştır." }
-  - { baslik: "Manuel Terapi ve Yumuşak Doku Tedavisi", metin: "Fizyoterapistler veya uzman doktorlar, manuel terapi tekniklerini (örneğin, masaj, manipülasyon) kullanarak kas ve eklem hareketliliğini artırır ve ağrıyı azaltır." }
-  - { baslik: "İlerleme ve Değerlendirme", metin: "Rehabilitasyon süreci boyunca ilerleme izlenir ve gerektiğinde tedavi planı revize edilir. Sporcuların iyileşme sürecini takip etmek için düzenli değerlendirmeler yapılır ve gerektiğinde tedavi yaklaşımı ayarlanır." }
+  - { baslik: "Değerlendirme", metin: "Yaralanmanın nasıl olduğu, doktor raporu ve görüntülemeler incelenir; ağrı, şişlik, hareket açıklığı, kas gücü ve denge ölçülür." }
+  - { baslik: "Ağrı ve şişliğin kontrolü", metin: "İlk dönemde soğuk uygulama, elektroterapi, bantlama ve hafif hareketlerle ağrı ve ödem azaltılır." }
+  - { baslik: "Hareket açıklığının kazanılması", metin: "Eklem hareketleri, manuel terapi ve germe egzersizleriyle ekleme normal hareketi geri kazandırılır." }
+  - { baslik: "Güçlendirme ve denge", metin: "Yaralanan bölgeyi ve çevresindeki kasları hedefleyen, giderek zorlaşan güçlendirme, denge ve kontrol egzersizleri uygulanır." }
+  - { baslik: "Fonksiyonel ve spora özgü eğitim", metin: "Merdiven, çömelme ve yürüme gibi günlük hareketler ile sporculara koşu, sıçrama ve yön değiştirme gibi branşa özel çalışmalar eklenir." }
+  - { baslik: "Geri dönüş ve korunma", metin: "Günlük hayata veya spora dönüş için gerekli kriterler kontrol edilir; tekrar sakatlanmayı önleyen bir ev programı verilir." }
+avantajBaslik: "Ortopedik rehabilitasyonun kazandırdıkları"
+avantajlar:
+  - { baslik: "Ağrıda azalma", metin: "Manuel terapi, egzersiz ve gerektiğinde elektroterapiyle ağrı kontrol altına alınır; ağrı kesici ihtiyacı azalabilir." }
+  - { baslik: "Hareket ve güç", metin: "Eklem hareket açıklığı ve kas gücü yeniden kazanılarak günlük işler ve spor kolaylaşır." }
+  - { baslik: "Ameliyat başarısına destek", metin: "Ameliyat sonrası düzenli rehabilitasyon, ameliyattan alınacak verimi artırır ve eklem sertliğini önler." }
+  - { baslik: "Tekrar sakatlanmayı önler", metin: "Zayıf halkalar güçlendirilir, hareket teknikleri düzeltilir; aynı yaralanmanın tekrarlama riski azalır." }
+  - { baslik: "Ameliyat sonrası ilk haftalarda evde", metin: "Koltuk değneği veya ateli olan hastanın hastaneye gidip gelmesi gerekmez; tedavi erken ve güvenle evde başlar." }
+  - { baslik: "Kişiye ve spora özel", metin: "Program yaşınıza, mesleğinize ve spor branşınıza göre hazırlanır." }
+onemli:
+  baslik: "Ağrı geçti, tedavi bitti mi?"
+  metin: "Ağrının geçmesi iyileşmenin ilk adımıdır; ancak zayıflamış kaslar ve bozulmuş denge devam ediyorsa yeniden sakatlanma riski yüksektir. Bu nedenle rehabilitasyon, ağrı geçtikten sonra da güç, denge ve kontrol hedefleri karşılanana kadar sürdürülmelidir. Ameliyat sonrası dönemde ise egzersizlerin zamanlaması doktorunuzun protokolüne göre belirlenir."
+sss:
+  - { soru: "Ameliyattan ne kadar sonra fizik tedaviye başlanır?", cevap: "Pek çok ortopedik ameliyatta rehabilitasyon ilk günlerde, doktorunuzun izin verdiği hareketlerle başlar. Başlangıç zamanı ve kısıtlamalar ameliyatın türüne göre değişir; fizyoterapistiniz doktorunuzun protokolüne uyar." }
+  - { soru: "Spora ne zaman dönebilirim?", cevap: "Dönüş zamanı takvime değil kriterlere bağlıdır: ağrısız tam hareket, yeterli kas gücü, denge ve spora özgü testlerin başarıyla geçilmesi gerekir. Ön çapraz bağ ameliyatı gibi durumlarda bu süre aylar sürebilir." }
+  - { soru: "Evde yeterli ekipman olur mu?", cevap: "Evet. Fizyoterapistimiz direnç bantları, ağırlıklar, denge ekipmanı ve gerektiğinde elektroterapi cihazı getirir. Pek çok egzersiz vücut ağırlığıyla da etkili şekilde yapılır." }
+  - { soru: "Ameliyatsız tedavi mümkün mü?", cevap: "Bazı bağ, menisküs ve tendon sorunlarında ameliyatsız rehabilitasyon ilk tercih olabilir. Ameliyat kararını ortopedi uzmanınız verir; fizyoterapi her iki yolda da tedavinin önemli bir parçasıdır." }
+  - { soru: "Kaç seans gerekir?", cevap: "Basit bir burkulmada birkaç hafta yeterli olabilirken, ameliyat sonrası rehabilitasyon birkaç ay sürebilir. Tahmini süre ilk değerlendirmeden sonra size bildirilir." }
 guncelleme: 2026-09-25
 ---
-## Bia Sağlıkta Ortopedik Sporcu Rehabilitasyon Hizmeti
+## Ortopedik ve sporcu rehabilitasyonu nedir?
 
-Bia sağlıkta ortopedik sporcu rehabilitasyonu, spor yaralanmalarının iyileştirilmesi ve sporcuların güvenli bir şekilde spora geri dönmesini sağlamak amacıyla özel bir rehabilitasyon yaklaşımıdır. Bu programlar, spor yaralanmalarının tanı ve değerlendirmesinden başlayarak, sporcunun bireysel ihtiyaçlarına uygun olarak özelleştirilmiş tedavi planlarının oluşturulmasını içerir. Fizyoterapistler, spor doktorları ve ortopedistler gibi uzmanlar genellikle bu sürecin bir parçasıdır ve sporcunun iyileşme sürecini en iyi şekilde yönlendirmek için bir araya gelirler.
+Ortopedik rehabilitasyon, kas-iskelet sistemini etkileyen yaralanma, hastalık ve ameliyatlardan sonra kişinin ağrısız ve güvenli şekilde günlük hayatına dönmesini amaçlar. Sporcu rehabilitasyonu ise bunun bir adım ötesidir: hedef, sporcunun yaralanmadan önceki performansına, tekrar sakatlanma riskini en aza indirerek geri dönmesidir.
 
-Ortopedik sporcu rehabilitasyonunda egzersiz, manuel terapi, yumuşak doku tedavisi ve sporcuların performansını artırmaya yönelik özel teknikler sıkça kullanılır. Sporcunun kas kuvvetini ve esnekliğini artırmak, hareket açıklığını iyileştirmek ve dengeyi geliştirmek için özel egzersizler tasarlanır. Ayrıca, yaralanmanın iyileşme sürecini hızlandırmak ve ağrıyı azaltmak için manuel terapi ve yumuşak doku tedavisi gibi elle uygulanan teknikler de yaygın olarak kullanılır.
+Bia Sağlık'ta ortopedik rehabilitasyon; yaralanmanın değerlendirmesinden başlayarak kişinin ihtiyaçlarına göre hazırlanan bir tedavi planıyla yürütülür. Egzersiz, manuel terapi, bantlama ve elektroterapi gibi yöntemler birlikte kullanılır.
+
+## İyileşmenin evreleri
+
+| Evre | Dönem | Odak |
+| --- | --- | --- |
+| **1. Koruma** | Yaralanma / ameliyat sonrası ilk günler | Ağrı ve şişliğin kontrolü, dokunun korunması |
+| **2. Hareket** | İlk haftalar | Eklem hareket açıklığının yeniden kazanılması |
+| **3. Güçlendirme** | Orta dönem | Kas gücü, denge ve hareket kontrolü |
+| **4. Fonksiyon ve dönüş** | Son dönem | Günlük hayata, işe veya spora güvenli dönüş |
+
+Evreler arasındaki geçiş takvime değil, iyileşmenin belirtilerine göre yapılır. Süreler kişiden kişiye ve yaralanmaya göre değişir.
+
+İlgili hizmetlerimiz: [kırık sonrası tedavi](/kirik-sonrasi-tedavi), [kronik ağrı tedavisi](/kronik-agri), [kuru iğneleme](/kuru-igneleme).
