@@ -66,28 +66,20 @@ const schema = [
       </template>
     </div>
     <div class="hero-slaytlar">
-      <div class="kap hero-ic" role="group" aria-roledescription="slide" aria-label="1 / 2">
-        <h1>İstanbul'da Evde Fizik Tedavi</h1>
-        <div class="serit-kisa" aria-hidden="true"><span></span><span></span><span></span></div>
-        <p class="hero-metin">Bia Sağlık olarak, evde fizik tedavi hizmetiyle sağlığınıza evinizin konforunda kavuşmanızı sağlıyoruz. Uzman ekibimiz, size özel tedavi planlarıyla iyileşme sürecinizi destekliyor.</p>
-        <div class="hero-btn">
-          <a href="/iletisim#randevu" class="btn btn-turkuaz">Ücretsiz İlk Muayene</a>
-          <a href={site.telefonLink} class="btn btn-beyaz">{site.telefon}</a>
-        </div>
+      <div class="hero-ic" role="group" aria-roledescription="slide" aria-label="1 / 2">
+        <h1 class="hero-baslik">Evde Fizik Tedavi</h1>
+        <div class="hero-serit" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="hero-metin">Bia Sağlık olarak, evde fizik tedavi hizmetiyle sağlığınıza evinizin konforunda kavuşmanızı sağlıyoruz. Uzman ekibimiz, sizin için özel olarak tasarlanmış tedavi planlarıyla, iyileşme sürecinizi destekliyor ve size en iyi sonuçları sunuyor.</p>
       </div>
-      <div class="kap hero-ic" role="group" aria-roledescription="slide" aria-label="2 / 2" aria-hidden="true">
-        <p class="hero-baslik">Evde fizyoterapi ile daha iyi bir yaşam</p>
-        <div class="serit-kisa" aria-hidden="true"><span></span><span></span><span></span></div>
-        <p class="hero-metin">Kişiselleştirilmiş tedavilerimiz ve uzman fizyoterapist kadromuzla size en uygun tedavi yöntemlerini sunuyor, iyileşme sürecinizde her adımda yanınızda oluyoruz.</p>
-        <div class="hero-btn">
-          <a href="/hizmetlerimiz" class="btn btn-turkuaz" tabindex="-1">Hizmetlerimiz</a>
-          <a href={site.whatsapp} class="btn btn-beyaz" rel="noopener" target="_blank" tabindex="-1">WhatsApp'tan yazın</a>
-        </div>
+      <div class="hero-ic hero-ic-2" role="group" aria-roledescription="slide" aria-label="2 / 2" aria-hidden="true">
+        <p class="hero-baslik">Evde Fizyoterapi ile Daha İyi Bir Yaşam</p>
+        <div class="hero-serit" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="hero-metin">Bia Sağlık'ta kişiselleştirilmiş tedavilerimiz ve uzman fizyoterapist kadromuzla size en uygun tedavi yöntemlerini sunuyor, sağlığınızı güvence altına alıyoruz.</p>
       </div>
     </div>
     <button class="hero-ok hero-geri" type="button" aria-label="Önceki slayt" hidden><svg viewBox="0 0 21 41" aria-hidden="true"><path d="M20.3 40.8 0 20.5 20.3.2l.7.7L1.3 20.5 21 40.1z"/></svg></button>
     <button class="hero-ok hero-ileri" type="button" aria-label="Sonraki slayt" hidden><svg viewBox="0 0 21 41" aria-hidden="true"><path d="M.7 40.8 21 20.5.7.2 0 .9l19.7 19.6L0 40.1z"/></svg></button>
-    <ul class="kap hero-kutular">
+    <ul class="hero-kutular">
       <li><span>Uzman</span> <strong>Terapistler</strong></li>
       <li><span>Kişiselleştirilmiş</span> <strong>Programlar</strong></li>
       <li><span>Evde</span> <strong>Fizik Tedavi</strong></li>
@@ -199,37 +191,58 @@ const schema = [
 </Base>
 
 <style>
-  .hero { position: relative; color: #fff; background: var(--indigo); overflow: hidden; }
+  /* ---- Hero: Wix ölçüleriyle birebir (masaüstü 980px içerik, 1015px yükseklik) ---- */
+  .hero { position: relative; background: #273272; color: #fff; overflow: hidden; min-height: 1015px; }
   .hero-arka { position: absolute; inset: 0; }
   .hero-arka :global(picture) { position: absolute; inset: 0; transition: opacity .9s ease; }
-  .hero-arka :global(.hero-gorsel) { width: 100%; height: 100%; object-fit: cover; object-position: 60% 35%; }
+  .hero-arka :global(.hero-gorsel) { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; opacity: .43; }
   .hero-arka :global(picture:nth-of-type(2)) { opacity: 0; }
   .hero[data-aktif="1"] .hero-arka :global(picture:nth-of-type(1)) { opacity: 0; }
   .hero[data-aktif="1"] .hero-arka :global(picture:nth-of-type(2)) { opacity: 1; }
-  .hero-slaytlar { position: relative; z-index: 2; display: grid; }
-  .hero-slaytlar > .hero-ic { grid-area: 1 / 1; transition: opacity .6s ease, visibility .6s; }
-  .hero-slaytlar > .hero-ic:nth-child(2) { opacity: 0; visibility: hidden; }
-  .hero[data-aktif="1"] .hero-slaytlar > .hero-ic:nth-child(1) { opacity: 0; visibility: hidden; }
-  .hero[data-aktif="1"] .hero-slaytlar > .hero-ic:nth-child(2) { opacity: 1; visibility: visible; }
-  .hero-baslik { font: 700 clamp(2rem, 5vw, 3.2rem)/1.2 var(--baslik-font); color: #fff; max-width: 16ch; margin: 0 0 .6em; text-transform: uppercase; letter-spacing: .04em; }
-  .hero-ok { position: absolute; z-index: 3; top: 45%; transform: translateY(-50%); width: 48px; height: 64px; display: grid; place-items: center; background: none; border: 0; cursor: pointer; color: #fff; opacity: .85; }
+  .hero-slaytlar { position: relative; z-index: 2; display: grid; width: min(980px, 100% - 40px); margin: 0 auto; }
+  .hero-ic { grid-area: 1 / 1; padding-top: 171px; transition: opacity .6s ease, visibility .6s; }
+  .hero-ic-2 { opacity: 0; visibility: hidden; }
+  .hero[data-aktif="1"] .hero-ic:not(.hero-ic-2) { opacity: 0; visibility: hidden; }
+  .hero[data-aktif="1"] .hero-ic-2 { opacity: 1; visibility: visible; }
+  .hero-baslik { font: 700 55px/73px var(--baslik-font); letter-spacing: .05em; color: #fff; margin: 0; }
+  .hero-ic-2 .hero-baslik { text-transform: uppercase; max-width: 720px; }
+  .hero-serit { display: flex; margin: 13px 0 21px; }
+  .hero-serit span { display: block; width: 156px; height: 13px; }
+  .hero-serit span:nth-child(1) { background: #404040; margin-right: 3px; }
+  .hero-serit span:nth-child(2) { background: #1990ce; }
+  .hero-serit span:nth-child(3) { background: #515dac; }
+  .hero-metin { font: 400 24px/33.6px RobotoWeb, var(--govde-font); max-width: 684px; margin: 0; color: #fff; }
+  .hero-ic-2 .hero-metin { max-width: 604px; }
+  .hero-ok { position: absolute; z-index: 3; top: 50%; transform: translateY(-50%); width: 45px; height: 72px; display: grid; place-items: center; background: none; border: 0; cursor: pointer; color: #fff; }
   .hero-ok[hidden] { display: none; }
-  .hero-ok:hover, .hero-ok:focus-visible { opacity: 1; }
-  .hero-ok svg { width: 22px; height: 42px; fill: currentColor; }
-  .hero-geri { left: 16px; }
-  .hero-ileri { right: 16px; }
-  @media (max-width: 1280px) { .hero-ok { display: none; } }
-  .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgb(73 82 160 / .88), rgb(81 93 172 / .62) 60%, rgb(81 93 172 / .35)); z-index: 1; }
-  .hero-ic { position: relative; padding-block: clamp(56px, 11vw, 130px) clamp(36px, 6vw, 60px); }
-  .hero h1 { color: #fff; max-width: 14ch; letter-spacing: .01em; }
-  .hero-metin { max-width: 560px; font-size: clamp(1.02rem, 2vw, 1.2rem); }
-  .hero-btn { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-  .hero-kutular { position: relative; z-index: 2; list-style: none; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); padding-inline: 20px; }
-  .hero-kutular li { display: flex; flex-direction: column; justify-content: center; text-align: center; min-height: clamp(96px, 16vw, 170px); padding: 12px 6px; font: 400 clamp(.78rem, 2.2vw, 1.3rem)/1.25 var(--baslik-font); letter-spacing: .04em; text-transform: uppercase; }
+  .hero-ok:hover, .hero-ok:focus-visible { opacity: .75; }
+  .hero-ok svg { width: 25px; height: 52px; fill: currentColor; }
+  .hero-geri { left: 90px; }
+  .hero-ileri { right: 90px; }
+  .hero-kutular { position: absolute; z-index: 2; left: 50%; bottom: 0; transform: translateX(-50%); width: min(980px, 100% - 40px); list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); }
+  .hero-kutular li { height: 280px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 8px solid; font: 400 30px/40px var(--baslik-font); letter-spacing: 1.5px; text-transform: uppercase; }
   .hero-kutular strong { font-weight: 700; }
-  .hero-kutular li:nth-child(1) { background: rgb(81 93 172 / .92); }
-  .hero-kutular li:nth-child(2) { background: rgb(25 144 206 / .9); }
-  .hero-kutular li:nth-child(3) { background: rgb(64 74 120 / .95); }
+  .hero-kutular li:nth-child(1) { background: rgb(81 93 172 / .72); border-color: #515dac; }
+  .hero-kutular li:nth-child(2) { background: rgb(25 144 206 / .62); border-color: #1990ce; }
+  .hero-kutular li:nth-child(3) { background: rgb(39 50 114 / .72); border-color: #273272; }
+  @media (max-width: 1180px) { .hero-geri { left: 16px; } .hero-ileri { right: 16px; } }
+  @media (max-width: 979px) {
+    .hero-kutular li { font-size: clamp(18px, 3vw, 30px); line-height: 1.35; }
+    .hero-baslik { font-size: clamp(36px, 5.6vw, 55px); line-height: 1.33; }
+  }
+  /* Mobil: Wix'in 320px mobil düzeni ekran genişliğine göre ölçeklenir (1u = 100vw/320) */
+  @media (max-width: 699px) {
+    .hero { --u: calc(100vw / 320); min-height: calc(var(--u) * 664); }
+    .hero-slaytlar { width: auto; margin: 0 calc(var(--u) * 20); }
+    .hero-ic { padding-top: calc(var(--u) * 47); }
+    .hero-baslik { font-size: calc(var(--u) * 21); line-height: 1.35; letter-spacing: .05em; }
+    .hero-ic-2 .hero-baslik { max-width: none; }
+    .hero-serit { display: none; }
+    .hero-metin { font-family: var(--govde-font); font-size: calc(var(--u) * 16); line-height: calc(var(--u) * 22.4); max-width: none; margin-top: calc(var(--u) * 24); }
+    .hero-ok { display: none; }
+    .hero-kutular { left: calc(var(--u) * 20); right: calc(var(--u) * 20); top: calc(var(--u) * 319); bottom: auto; transform: none; width: auto; grid-template-columns: 1fr; gap: calc(var(--u) * 21); }
+    .hero-kutular li { height: calc(var(--u) * 98); border-bottom-width: calc(var(--u) * 10); font-size: calc(var(--u) * 20); line-height: 1.3; letter-spacing: calc(var(--u) * 1); }
+  }
 
   .hakkinda-metin { text-align: left; margin: 28px 0; }
 
@@ -268,6 +281,5 @@ const schema = [
 
   @media (max-width: 599px) {
     .sayilar ul { grid-template-columns: repeat(2, 1fr); row-gap: 22px; }
-    .hero-kutular { padding-inline: 0; }
   }
 </style>
