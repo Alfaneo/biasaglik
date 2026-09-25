@@ -1,0 +1,55 @@
+# Her push'ta siteyi derler ve Hostinger'daki demo subdomain'e FTP ile yükler.
+# Gerekli GitHub Secrets: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
+# İsteğe bağlı GitHub Variable: FTP_DIR (varsayılan ./ — FTP hesabı zaten subdomain klasörüne açılıyorsa)
+name: Hostinger demo yükleme
+
+on:
+  push:
+    branches: [main, claude/eloquent-mendel-8fiqyt]
+  workflow_dispatch: # Actions sekmesinden elle çalıştırma düğmesi
+
+concurrency:
+  group: hostinger-demo
+  cancel-in-progress: false # yükleme yarıda kesilmesin
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu indir
+        uses: actions/checkout@v4
+
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Paketleri kur
+        run: npm ci
+
+      - name: Siteyi derle (demo modu, Google'dan gizli)
+        run: npm run build
+        env:
+          DEMO: 'true'
+
+      - name: FTP bilgileri var mı?
+        id: kontrol
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        run: |
+          if [ -z "$FTP_SERVER" ]; then
+            echo "::warning::FTP_SERVER secret tanımlı değil, yükleme atlandı. Settings → Secrets and variables → Actions bölümünden ekleyin."
+            echo "atla=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Hostinger'a yükle
+        if: steps.kontrol.outputs.atla != 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ${{ vars.FTP_DIR || './' }}
+          log-level: standard

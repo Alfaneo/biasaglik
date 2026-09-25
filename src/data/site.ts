@@ -21,6 +21,9 @@ export const site = {
   calismaSaatleriSchema: 'Mo-Sa 09:00-20:00',
 };
 
+// DEMO=true ile derlenen sürüm (müşteriye gösterim) arama motorlarından gizlenir
+export const demo = process.env.DEMO === 'true';
+
 export const tecrubeYili = new Date().getFullYear() - site.kurulusYili;
 
 export const menu = [

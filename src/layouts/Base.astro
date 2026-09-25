@@ -7,7 +7,7 @@ import SabitButonlar from '../components/SabitButonlar.astro';
 import varsayilanOg from '../assets/img/anasayfa-hero.jpg';
 import exoLatin from '../assets/fonts/exo-latin-700-normal.woff2?url';
 import exoLatinExt from '../assets/fonts/exo-latin-ext-700-normal.woff2?url';
-import { site } from '../data/site';
+import { site, demo } from '../data/site';
 
 interface Props {
   baslik: string;
@@ -32,7 +32,7 @@ const ogUrl = new URL(og.src, site.url).href;
     <link rel="canonical" href={kanonik} />
     <link rel="preload" href={exoLatin} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={exoLatinExt} as="font" type="font/woff2" crossorigin />
-    {noindex && <meta name="robots" content="noindex" />}
+    {(noindex || demo) && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#273272" />
