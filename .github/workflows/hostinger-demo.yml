@@ -37,10 +37,19 @@ jobs:
         id: kontrol
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          if [ -z "$FTP_SERVER" ]; then
-            echo "::warning::FTP_SERVER secret tanımlı değil, yükleme atlandı. Settings → Secrets and variables → Actions bölümünden ekleyin."
+          eksik=""
+          [ -z "$FTP_SERVER" ] && eksik="$eksik FTP_SERVER"
+          [ -z "$FTP_USERNAME" ] && eksik="$eksik FTP_USERNAME"
+          [ -z "$FTP_PASSWORD" ] && eksik="$eksik FTP_PASSWORD"
+          if [ "$eksik" = " FTP_SERVER FTP_USERNAME FTP_PASSWORD" ]; then
+            echo "::warning::FTP secret'ları tanımlı değil, yükleme atlandı. Settings → Secrets and variables → Actions bölümünden ekleyin."
             echo "atla=true" >> "$GITHUB_OUTPUT"
+          elif [ -n "$eksik" ]; then
+            echo "::error::Eksik secret:$eksik — Settings → Secrets and variables → Actions bölümünde adları birebir kontrol edin."
+            exit 1
           fi
 
       - name: Hostinger'a yükle
