@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Ikon from './Ikon.astro';
+import gorsel from '../assets/img/iletisim-fizyoterapist.png';
+import { site } from '../data/site';
+
+// Form sunucu gerektirmez: gönderince WhatsApp'ta hazır mesaj açılır.
+// JS kapalıysa da çalışır (tek "text" alanı wa.me'ye gider).
+interface Props { baslikEtiketi?: 'h1' | 'h2'; baslik?: string }
+const { baslikEtiketi: B = 'h2', baslik = 'Bizimle İletişime Geçin' } = Astro.props;
+const hizmetler = (await getCollection('hizmetler'))
+  .filter((h) => h.data.kategori !== 'Genel')
+  .map((h) => h.data.baslik)
+  .sort((a, b) => a.localeCompare(b, 'tr'));
+---
+<section class="bolum iletisim" id="randevu">
+  <div class="kap">
+    <B class="baslik-kare">{baslik}</B>
+    <ul class="iletisim-bilgi">
+      <li><Ikon ad="telefon" boyut={22} /><div><span>Telefon</span><a href={site.telefonLink}>{site.telefon}</a></div></li>
+      <li><Ikon ad="eposta" boyut={22} /><div><span>E-posta</span><a href={`mailto:${site.eposta}`}>{site.eposta}</a></div></li>
+      <li><Ikon ad="konum" boyut={22} /><div><span>Adresimiz</span><a href={site.haritaLink} rel="noopener" target="_blank">{site.adres.satir1}, {site.adres.postaKodu} {site.adres.ilce}/{site.adres.il}</a></div></li>
+      <li><Ikon ad="saat" boyut={22} /><div><span>Hizmet saatleri</span><p>{site.calismaSaatleri}</p></div></li>
+    </ul>
+
+    <div class="iletisim-izgara">
+      <form class="form" action={site.whatsapp} method="get" target="_blank" id="randevu-formu">
+        <p class="form-not">Formu doldurun, WhatsApp'ta mesajınız hazır olarak açılsın. Size en kısa sürede dönüş yapalım.</p>
+        <div class="alan-grup">
+          <label>Ad Soyad<input name="ad" autocomplete="name" required /></label>
+          <label>Telefon<input name="tel" type="tel" autocomplete="tel" inputmode="tel" required /></label>
+        </div>
+        <label>İlgilendiğiniz hizmet
+          <select name="hizmet">
+            <option value="">Seçiniz (isteğe bağlı)</option>
+            <option>Evde Fizik Tedavi</option>
+            {hizmetler.map((h) => <option>{h}</option>)}
+          </select>
+        </label>
+        <label>Mesajınız<textarea name="text" rows="4" placeholder="Şikâyetinizi ve size uygun zamanı kısaca yazın"></textarea></label>
+        <button class="btn" type="submit"><Ikon ad="whatsapp" /> Gönder</button>
+      </form>
+      <Image src={gorsel} alt="Fizyoterapist hastanın omzunu değerlendiriyor" width={640} widths={[420, 640, 960]} sizes="(min-width: 900px) 520px, 92vw" loading="lazy" class="iletisim-gorsel" />
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.getElementById('randevu-formu')?.addEventListener('submit', function (e) {
+    var f = e.currentTarget, v = function (n) { return (f.elements[n].value || '').trim(); };
+    var metin = 'Merhaba, randevu almak istiyorum.\nAd Soyad: ' + v('ad') + '\nTelefon: ' + v('tel') +
+      (v('hizmet') ? '\nHizmet: ' + v('hizmet') : '') + (v('text') ? '\nMesaj: ' + v('text') : '');
+    e.preventDefault();
+    window.open(f.action + '?text=' + encodeURIComponent(metin), '_blank', 'noopener');
+  });
+</script>
+
+<style>
+  .iletisim-bilgi { list-style: none; padding: 0; margin: 32px 0 40px; display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+  .iletisim-bilgi li { display: flex; gap: 12px; align-items: flex-start; }
+  .iletisim-bilgi :global(svg) { color: var(--lacivert); flex: none; margin-top: 4px; }
+  .iletisim-bilgi span { display: block; font: 700 1rem var(--baslik-font); color: var(--lacivert); }
+  .iletisim-bilgi a { color: #222; text-decoration: none; }
+  .iletisim-bilgi a:hover { color: var(--mavi); text-decoration: underline; }
+  .iletisim-bilgi p { margin: 0; }
+  .iletisim-izgara { display: grid; gap: 32px; align-items: end; }
+  .form { display: grid; gap: 16px; }
+  .form-not { margin: 0; font-size: .95rem; color: #555; }
+  .alan-grup { display: grid; gap: 16px; }
+  .form label { display: grid; gap: 6px; font: 700 .92rem var(--baslik-font); color: #222; }
+  .form input, .form select, .form textarea { font: 400 1rem var(--govde-font); padding: 12px 4px; border: 0; border-bottom: 1.5px solid #222; background: transparent; border-radius: 0; min-height: 48px; }
+  .form textarea { resize: vertical; }
+  .form input:focus, .form select:focus, .form textarea:focus { outline: none; border-bottom-color: var(--mavi); box-shadow: 0 1px 0 var(--mavi); }
+  .form .btn { justify-self: start; border-radius: 6px; }
+  .iletisim :global(.iletisim-gorsel) { width: 100%; height: auto; }
+  @media (min-width: 640px) { .alan-grup { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 900px) { .iletisim-izgara { grid-template-columns: 1fr 1fr; } }
+</style>

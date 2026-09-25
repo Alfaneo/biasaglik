@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SayfaBasi from '../components/SayfaBasi.astro';
+import HizmetKarti from '../components/HizmetKarti.astro';
+import RandevuCta from '../components/RandevuCta.astro';
+import { kategoriSirasi, kategoriBaslik, site } from '../data/site';
+import { breadcrumbSchema, isletmeSchema } from '../data/schema';
+
+const hizmetler = await getCollection('hizmetler');
+const gruplar = kategoriSirasi.map((k) => ({
+  ad: kategoriBaslik[k],
+  liste: hizmetler.filter((h) => h.data.kategori === k).sort((a, b) => a.data.sira - b.data.sira || a.data.baslik.localeCompare(b.data.baslik, 'tr')),
+}));
+const liste = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: gruplar.flatMap((g) => g.liste).map((h, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(`/${h.id}`, site.url).href, name: h.data.baslik })),
+};
+---
+<Base
+  baslik="Hizmetlerimiz | Evde Fizik Tedavi | Bia Sağlık"
+  aciklama="Nörolojik, ortopedik, pediatrik ve solunum rehabilitasyonu; elektroterapi, kuru iğneleme, medikal masaj ve daha fazlası. Tümü evinizde uygulanır."
+  schema={[isletmeSchema(), breadcrumbSchema([{ ad: 'Anasayfa', url: '/' }, { ad: 'Hizmetlerimiz', url: '/hizmetlerimiz' }]), liste]}
+>
+  <SayfaBasi baslik="Hizmetlerimiz" ust="Evde fizik tedavi">
+    <p>Tüm tedavilerimiz, uzman fizyoterapistlerimiz tarafından kendi evinizde uygulanır. Size uygun tedaviyi ücretsiz ilk değerlendirmede birlikte belirleriz. <a href="/evde-fizik-tedavi">Evde fizik tedavi nasıl işler?</a></p>
+  </SayfaBasi>
+  {gruplar.map((g, gi) => (
+    <section class="bolum grup">
+      <div class="kap">
+        <h2>{g.ad}</h2>
+        <div class="izgara">{g.liste.map((h, i) => <HizmetKarti hizmet={h} oncelikli={gi === 0 && i === 0} />)}</div>
+      </div>
+    </section>
+  ))}
+  <RandevuCta />
+</Base>
+
+<style>
+  .grup:nth-of-type(even) { background: var(--soluk); }
+  .grup { padding-block: clamp(36px, 6vw, 60px); }
+</style>

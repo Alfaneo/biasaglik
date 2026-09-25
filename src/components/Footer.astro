@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import logo from '../assets/img/logo.png';
+import Ikon from './Ikon.astro';
+import { site, menu } from '../data/site';
+
+const hizmetler = (await getCollection('hizmetler'))
+  .filter((h) => h.data.kategori !== 'Genel')
+  .sort((a, b) => a.data.baslik.localeCompare(b.data.baslik, 'tr'));
+---
+<footer class="alt">
+  <div class="kap">
+    <div class="alt-logo"><Image src={logo} alt="Bia Sağlık" width={200} densities={[1, 2]} quality={70} loading="lazy" /></div>
+    <div class="alt-izgara">
+      <div>
+        <p class="alt-baslik">Menü</p>
+        <ul>
+          {menu.map((m) => <li><a href={m.url}>{m.ad}</a></li>)}
+          <li><a href="/evde-fizik-tedavi">Evde Fizik Tedavi</a></li>
+        </ul>
+      </div>
+      <div class="alt-hizmetler">
+        <p class="alt-baslik">Hizmetler</p>
+        <ul>
+          {hizmetler.map((h) => <li><a href={`/${h.id}`}>{h.data.baslik}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <p class="alt-baslik">İletişim</p>
+        <ul class="alt-iletisim">
+          <li><Ikon ad="konum" boyut={22} /><a href={site.haritaLink} rel="noopener" target="_blank">{site.adres.satir1}, {site.adres.postaKodu} {site.adres.ilce}/{site.adres.il}</a></li>
+          <li><Ikon ad="eposta" boyut={22} /><a href={`mailto:${site.eposta}`}>{site.eposta}</a></li>
+          <li><Ikon ad="telefon" boyut={22} /><a href={site.telefonLink}>{site.telefon}</a></li>
+          <li><Ikon ad="saat" boyut={22} /><span>{site.calismaSaatleri}</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="telif">© {new Date().getFullYear()} {site.ad}®. Tüm hakları saklıdır.</p>
+  </div>
+  <div class="serit" aria-hidden="true"><span></span><span></span><span></span></div>
+</footer>
+
+<style>
+  .alt { background: var(--lacivert); color: #fff; font-size: .95rem; padding-top: 48px; }
+  .alt-logo img { background: #fff; border-radius: 6px; padding: 8px 12px; width: 200px; box-sizing: content-box; }
+  .alt-izgara { display: grid; gap: 32px; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgb(255 255 255 / .6); }
+  .alt-baslik { font: 700 1.2rem var(--baslik-font); color: var(--turkuaz); margin-bottom: 12px; }
+  .alt ul { list-style: none; margin: 0; padding: 0; }
+  .alt li { margin-bottom: 4px; }
+  .alt a { color: #fff; text-decoration: none; display: inline-block; padding: 6px 0; }
+  .alt a:hover { color: var(--turkuaz); text-decoration: underline; }
+  .alt-iletisim li { display: flex; gap: 12px; align-items: flex-start; }
+  .alt-iletisim :global(svg) { color: var(--turkuaz); flex: none; margin-top: 6px; }
+  .alt-iletisim span { padding: 6px 0; }
+  .telif { text-align: center; font-size: .85rem; opacity: .85; margin: 40px 0 0; padding-bottom: 24px; }
+  @media (min-width: 700px) {
+    .alt-hizmetler ul { columns: 2; column-gap: 32px; }
+  }
+  @media (min-width: 1000px) {
+    .alt-izgara { grid-template-columns: 1fr 2.2fr 1.6fr; }
+  }
+</style>

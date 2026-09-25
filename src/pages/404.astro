@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import SayfaBasi from '../components/SayfaBasi.astro';
+---
+<Base baslik="Sayfa bulunamadı | Bia Sağlık" aciklama="Aradığınız sayfa bulunamadı. Bia Sağlık evde fizik tedavi hizmetlerine anasayfadan ulaşabilirsiniz." noindex>
+  <SayfaBasi baslik="Sayfa bulunamadı">
+    <p style="text-align:center">Aradığınız sayfa taşınmış veya kaldırılmış olabilir.</p>
+    <p style="text-align:center"><a class="btn" href="/">Anasayfaya dön</a> <a class="btn btn-turkuaz" href="/hizmetlerimiz">Hizmetlerimiz</a></p>
+  </SayfaBasi>
+  <div style="height:60px"></div>
+</Base>

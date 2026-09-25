@@ -1,0 +1,23 @@
+---
+import { Picture } from 'astro:assets';
+interface Props { baslik: string; gorsel?: ImageMetadata; gorselAlt?: string; ust?: string }
+const { baslik, gorsel, gorselAlt = '', ust } = Astro.props;
+---
+{gorsel && (
+  <div class="sb-gorsel">
+    <Picture src={gorsel} alt={gorselAlt} formats={['avif', 'webp']} widths={[480, 800, 1200, 1600]} sizes="100vw" quality={60} loading="eager" fetchpriority="high" />
+  </div>
+)}
+<div class="kap dar sb">
+  {ust && <p class="ust-etiket">{ust}</p>}
+  <h1>{baslik}</h1>
+  <slot />
+</div>
+
+<style>
+  .sb-gorsel { position: relative; height: clamp(160px, 26vw, 260px); overflow: hidden; background: var(--indigo); }
+  .sb-gorsel :global(img) { width: 100%; height: 100%; object-fit: cover; opacity: .75; }
+  .sb { text-align: center; padding-top: clamp(36px, 6vw, 56px); }
+  .sb h1 { color: var(--indigo); }
+  .sb :global(p:not(.ust-etiket)) { text-align: left; }
+</style>

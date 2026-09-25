@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SayfaBasi from '../components/SayfaBasi.astro';
+import RandevuCta from '../components/RandevuCta.astro';
+import { breadcrumbSchema, isletmeId, isletmeSchema } from '../data/schema';
+
+const uzmanlar = (await getCollection('uzmanlar')).sort((a, b) => a.data.sira - b.data.sira);
+const schema = [
+  isletmeSchema(),
+  breadcrumbSchema([{ ad: 'Anasayfa', url: '/' }, { ad: 'Uzmanlarımız', url: '/ekibimiz' }]),
+  ...uzmanlar.map((u) => ({ '@context': 'https://schema.org', '@type': 'Person', name: u.data.ad, jobTitle: u.data.unvan, worksFor: { '@id': isletmeId } })),
+];
+---
+<Base baslik="Uzmanlarımız | Bia Sağlık Evde Fizik Tedavi" aciklama="Bia Sağlık'ın evde fizik tedavi uygulayan uzman fizyoterapist ekibiyle tanışın. Size en uygun fizyoterapistle ücretsiz ilk değerlendirme için arayın." schema={schema}>
+  <SayfaBasi baslik="Uzmanlarımız" ust="Bizi tanıyın">
+    <p class="ortala">Evinize gelen fizyoterapistlerimiz, değerlendirmeden tedavi sonuna kadar sürecinizi yakından takip eder.</p>
+  </SayfaBasi>
+  <section class="bolum">
+    <ul class="kap uzmanlar">
+      {uzmanlar.map((u) => (
+        <li>
+          <Image src={u.data.foto} alt={`${u.data.ad}, ${u.data.unvan}`} width={240} densities={[1, 2]} loading="eager" />
+          <h2>{u.data.ad}</h2>
+          <p>{u.data.unvan}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+  <RandevuCta />
+</Base>
+
+<style>
+  .ortala { text-align: center !important; }
+  .uzmanlar { list-style: none; padding-block: 0; margin: 0 auto; display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); text-align: center; }
+  .uzmanlar img { width: 200px; height: 200px; object-fit: cover; object-position: top; border-radius: 50%; margin: 0 auto 16px; }
+  .uzmanlar h2 { font-size: 1.6rem; color: var(--indigo); margin-bottom: 2px; }
+  .uzmanlar p { font: 700 1rem var(--baslik-font); color: #222; }
+</style>

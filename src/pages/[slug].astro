@@ -1,0 +1,227 @@
+---
+import { Image, Picture, getImage } from 'astro:assets';
+import { getCollection, getEntry, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import IkonSerit from '../components/IkonSerit.astro';
+import Sss from '../components/Sss.astro';
+import RandevuCta from '../components/RandevuCta.astro';
+import HizmetKarti from '../components/HizmetKarti.astro';
+import { site } from '../data/site';
+import { breadcrumbSchema, isletmeId, isletmeSchema, sssSchema } from '../data/schema';
+
+export async function getStaticPaths() {
+  const hizmetler = await getCollection('hizmetler');
+  return hizmetler.map((hizmet) => ({ params: { slug: hizmet.id }, props: { hizmet } }));
+}
+
+const { hizmet } = Astro.props;
+const h = hizmet.data;
+const { Content } = await render(hizmet);
+const uzman = h.kontrolEden ? await getEntry(h.kontrolEden) : undefined;
+
+const ilgili = (await getCollection('hizmetler'))
+  .filter((x) => x.id !== hizmet.id && x.data.kategori === h.kategori)
+  .slice(0, 3);
+
+const sayfaUrl = `/${hizmet.id}`;
+const kirinti = h.kategori === 'Genel'
+  ? [{ ad: 'Anasayfa', url: '/' }, { ad: h.baslik, url: sayfaUrl }]
+  : [{ ad: 'Anasayfa', url: '/' }, { ad: 'Hizmetlerimiz', url: '/hizmetlerimiz' }, { ad: h.baslik, url: sayfaUrl }];
+
+const heroOg = await getImage({ src: h.hero, width: 1200, format: 'jpg' });
+const tarih = h.guncelleme.toISOString().slice(0, 10);
+const tarihYazi = h.guncelleme.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const schema: Record<string, unknown>[] = [
+  isletmeSchema(),
+  breadcrumbSchema(kirinti),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalWebPage',
+    name: h.seoBaslik,
+    description: h.aciklama,
+    url: new URL(sayfaUrl, site.url).href,
+    inLanguage: 'tr-TR',
+    image: new URL(heroOg.src, site.url).href,
+    lastReviewed: tarih,
+    dateModified: tarih,
+    about: { '@type': 'MedicalTherapy', name: h.baslik },
+    publisher: { '@id': isletmeId },
+    ...(uzman ? { reviewedBy: { '@type': 'Person', name: uzman.data.ad, jobTitle: uzman.data.unvan, worksFor: { '@id': isletmeId } } } : {}),
+  },
+];
+if (h.sss?.length) schema.push(sssSchema(h.sss));
+---
+<Base baslik={h.seoBaslik} aciklama={h.aciklama} ogGorsel={h.hero} schema={schema}>
+  <section class="hz-hero">
+    <Picture
+      src={h.hero}
+      alt={h.heroAlt}
+      formats={['avif', 'webp']}
+      widths={[480, 800, 1200, 1600]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="hz-hero-gorsel"
+    />
+    <div class="kap">
+      <div class="hz-kart">
+        <h1>{h.baslik}</h1>
+        {h.altBaslik && <p class="hz-alt">{h.altBaslik}</p>}
+        <p class="hz-ozet">{h.ozet}</p>
+      </div>
+    </div>
+  </section>
+  <div class="serit" aria-hidden="true"><span></span><span></span><span></span></div>
+  <Breadcrumb adimlar={kirinti} />
+
+  {h.bilgiKutusu && (
+    <section class="kap bilgi" aria-label="Tedavi bilgisi">
+      <p class="bilgi-baslik">Tedavi bilgisi</p>
+      <dl>
+        {h.bilgiKutusu.map((b) => <div><dt>{b.etiket}</dt><dd>{b.deger}</dd></div>)}
+      </dl>
+    </section>
+  )}
+
+  <section class="bolum">
+    <div class:list={['kap', 'hz-govde', { 'tek-kolon': !h.gorsel }]}>
+      {h.gorsel && (
+        <div class="hz-gorsel">
+          <Image src={h.gorsel} alt={h.gorselAlt ?? h.baslik} width={560} widths={[420, 560, 840]} sizes="(min-width: 900px) 460px, 92vw" loading="lazy" />
+        </div>
+      )}
+      <div class="icerik"><Content /></div>
+    </div>
+  </section>
+
+  {h.endikasyonlar && (
+    <section class="bolum bolum-soluk">
+      <div class="kap">
+        <p class="ust-etiket">Kimler için uygun</p>
+        <h2>{h.endikasyonBaslik}</h2>
+        {h.endikasyonGiris && <p class="giris">{h.endikasyonGiris}</p>}
+        <ul class="endik">
+          {h.endikasyonlar.map((e) => (
+            <li>{e.baslik && <h3>{e.baslik}</h3>}<p>{e.metin}</p></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <IkonSerit />
+
+  {h.adimlar && (
+    <section class="bolum">
+      <div class="kap dar">
+        <p class="ust-etiket">Süreç</p>
+        <h2>{h.surecBaslik}</h2>
+        {h.surecGiris && <p class="giris">{h.surecGiris}</p>}
+        <ol class="adimlar">
+          {h.adimlar.map((a) => <li><h3>{a.baslik}</h3><p>{a.metin}</p></li>)}
+        </ol>
+      </div>
+    </section>
+  )}
+
+  {h.avantajlar && (
+    <section class="bolum bolum-soluk">
+      <div class="kap">
+        <p class="ust-etiket">Avantajlar</p>
+        <h2>{h.avantajBaslik}</h2>
+        <ul class="avantaj">
+          {h.avantajlar.map((a) => <li><h3>{a.baslik}</h3><p>{a.metin}</p></li>)}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {h.onemli && (
+    <section class="bolum">
+      <div class="kap dar">
+        <div class="onemli">
+          <p class="ust-etiket">Önemli</p>
+          <h2>{h.onemli.baslik}</h2>
+          <p>{h.onemli.metin}</p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {h.sss && <Sss sss={h.sss} />}
+
+  <section class="kap dar kontrol">
+    {uzman ? (
+      <p>Bu sayfanın içeriği <a href="/ekibimiz">{uzman.data.ad}</a> ({uzman.data.unvan}) tarafından kontrol edilmiştir. Son güncelleme: <time datetime={tarih}>{tarihYazi}</time>.</p>
+    ) : (
+      <p>Son güncelleme: <time datetime={tarih}>{tarihYazi}</time>.</p>
+    )}
+    <p class="uyari">Bu sayfadaki bilgiler genel bilgilendirme amaçlıdır; muayene ve tedavinin yerini tutmaz. Size uygun tedaviyi fizyoterapistiniz değerlendirme sonrasında belirler.</p>
+  </section>
+
+  <RandevuCta />
+
+  {ilgili.length > 0 && (
+    <section class="bolum bolum-soluk">
+      <div class="kap">
+        <h2 class="baslik-kare">İlgili hizmetler</h2>
+        <div class="izgara ilgili">
+          {ilgili.map((x) => <HizmetKarti hizmet={x} />)}
+        </div>
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .hz-hero { position: relative; padding-top: clamp(90px, 16vw, 110px); }
+  .hz-hero-gorsel, .hz-hero :global(.hz-hero-gorsel) { position: absolute; inset: 0 0 auto 0; width: 100%; height: clamp(220px, 42vw, 400px); object-fit: cover; }
+  .hz-kart { position: relative; background: #fff; max-width: 860px; margin: 0 auto; padding: clamp(24px, 5vw, 56px) clamp(20px, 7vw, 84px) clamp(24px, 4vw, 40px); box-shadow: var(--golge); }
+  .hz-kart h1 { margin-bottom: .4em; }
+  .hz-alt { font: 700 1.15rem/1.4 var(--baslik-font); color: var(--lacivert); }
+  .hz-ozet { margin: 0; font-size: 1.05rem; }
+
+  .bilgi { margin-top: clamp(32px, 5vw, 56px); }
+  .bilgi-baslik { font: 700 .85rem var(--baslik-font); letter-spacing: .08em; text-transform: uppercase; color: var(--indigo); margin-bottom: 10px; }
+  .bilgi dl { margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--cizgi); border-radius: 8px; overflow: hidden; }
+  .bilgi dl div { padding: 14px 16px; border-right: 1px solid var(--cizgi); border-bottom: 1px solid var(--cizgi); margin: 0 -1px -1px 0; }
+  .bilgi dt { font-size: .82rem; color: #666; }
+  @media (min-width: 800px) { .bilgi dl { grid-template-columns: repeat(4, 1fr); } }
+  .bilgi dd { margin: 2px 0 0; font: 700 1.05rem var(--baslik-font); color: var(--lacivert); }
+
+  .hz-govde { display: grid; gap: clamp(28px, 5vw, 56px); align-items: start; }
+  .hz-govde > * { min-width: 0; }
+  .hz-gorsel { border-left: 8px solid; border-image: linear-gradient(var(--koyu) 0 33%, var(--mavi) 33% 66%, var(--indigo) 66%) 1; }
+  .hz-gorsel img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 0 10px 10px 0; }
+  @media (min-width: 900px) {
+    .hz-govde { grid-template-columns: 460px 1fr; }
+    .hz-govde.tek-kolon { grid-template-columns: 1fr; max-width: 820px; }
+  }
+
+  .giris { font-size: 1.05rem; max-width: 820px; }
+  .endik { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+  .endik li { background: #fff; border-radius: 8px; padding: 20px 22px; border-top: 4px solid var(--mavi); box-shadow: var(--golge); }
+  .endik h3 { margin-bottom: .4em; }
+  .endik p { margin: 0; font-size: .96rem; }
+
+  .adimlar { list-style: none; padding: 0; margin: 28px 0 0; counter-reset: adim; }
+  .adimlar li { position: relative; padding: 0 0 26px 66px; counter-increment: adim; }
+  .adimlar li::before { content: counter(adim); position: absolute; left: 0; top: -4px; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--indigo); color: #fff; font: 700 1.2rem var(--baslik-font); }
+  .adimlar li:not(:last-child)::after { content: ''; position: absolute; left: 22px; top: 46px; bottom: 0; width: 2px; background: var(--cizgi); }
+  .adimlar h3 { margin-bottom: .3em; }
+  .adimlar p { margin: 0; }
+
+  .avantaj { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+  .avantaj li { background: #fff; border-radius: 8px; padding: 22px; box-shadow: var(--golge); }
+  .avantaj h3 { color: var(--indigo); }
+  .avantaj p { margin: 0; font-size: .96rem; }
+
+  .onemli { background: #fff8e8; border-left: 6px solid #edaf3b; border-radius: 8px; padding: clamp(20px, 4vw, 32px); }
+  .onemli h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); }
+  .onemli p:last-child { margin: 0; }
+
+  .kontrol { padding-block: 8px 40px; font-size: .92rem; color: #555; }
+  .uyari { font-size: .85rem; color: #5f5f5f; }
+</style>

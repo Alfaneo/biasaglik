@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import SayfaBasi from '../components/SayfaBasi.astro';
+import IkonSerit from '../components/IkonSerit.astro';
+import RandevuCta from '../components/RandevuCta.astro';
+import gorsel from '../assets/img/hakkimizda-hero.jpg';
+import { site } from '../data/site';
+import { breadcrumbSchema, isletmeSchema } from '../data/schema';
+---
+<Base
+  baslik="Hakkımızda | Bia Sağlık Evde Fizik Tedavi"
+  aciklama={`Bia Sağlık, ${site.kurulusYili}'dan bu yana İstanbul'da evde fizik tedavi hizmeti veriyor. Misyonumuz, ekibimiz ve çalışma yaklaşımımız.`}
+  ogGorsel={gorsel}
+  schema={[isletmeSchema(), breadcrumbSchema([{ ad: 'Anasayfa', url: '/' }, { ad: 'Hakkımızda', url: '/hakkimizda' }])]}
+>
+  <SayfaBasi baslik="Hakkımızda" gorsel={gorsel} gorselAlt="Fizyoterapist, evinde yaşlı bir hastayla görüşüyor">
+    <p>Bia Sağlık, {site.kurulusYili} yılından bu yana evde fizik tedavi hizmetlerinde öncü bir rol oynamaktadır. Sağlık sektöründeki deneyimi ve uzman kadrosuyla hastalarına kaliteli bir hizmet sunmayı amaçlayan firmamız, evde fizik tedavi alanında güvenilir bir isim olmuştur. Misyonumuz, hastalarımızın konforunu ve iyileşme süreçlerini ön planda tutarak evlerinde en etkili tedaviyi almalarını sağlamaktır.</p>
+    <p>Bia Sağlık, İstanbul'un her noktasına geniş hizmet ağı ve mobil ekibiyle ulaşır. Hızlı ve etkili bir şekilde hastalarına ulaşmayı hedefleyen firmamız, evde fizik tedavi hizmetlerini yaygın bir şekilde sunmaktadır. Amacımız, hastalarımızın sağlık sorunlarıyla mücadele ederken dış dünyadan kopmadan, aileleriyle birlikte konforlu bir ortamda tedavi almalarını sağlamaktır.</p>
+  </SayfaBasi>
+  <div class="bosluk"></div>
+  <IkonSerit />
+  <section class="bolum">
+    <div class="kap dar">
+      <h2>Çalışma yaklaşımımız</h2>
+      <p>Uzman fizyoterapistlerimizin hazırladığı, kişiye özel rehabilitasyon programlarıyla hastalarımızın sağlıklarına kısa sürede kavuşmalarını destekliyoruz. Her hastamızın ihtiyaçlarını ve hedeflerini anlayarak tedavi süreçlerini titizlikle planlıyor ve uyguluyoruz. Hasta memnuniyetini ön planda tutarak hizmet kalitemizi sürekli yükseltmeye devam ediyoruz.</p>
+      <p>Bia Sağlık, uzun yıllara dayanan tecrübesi, profesyonel yaklaşımı ve hasta odaklı hizmet anlayışıyla evde fizik tedavi alanında güvenilir bir konuma gelmiştir. Sağlık alanındaki gelişmeleri yakından takip ederek hastalarımızın yaşamlarına olumlu bir dokunuş yapmak, bizim için en büyük motivasyon kaynağıdır.</p>
+      <p><a href="/ekibimiz">Uzman ekibimizi tanıyın</a> · <a href="/hizmetlerimiz">Tüm hizmetlerimiz</a> · <a href="/evde-fizik-tedavi">Evde fizik tedavi nasıl işler?</a></p>
+    </div>
+  </section>
+  <RandevuCta />
+</Base>
+
+<style>
+  .bosluk { height: clamp(24px, 5vw, 48px); }
+</style>

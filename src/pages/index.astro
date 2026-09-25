@@ -1,0 +1,214 @@
+---
+import { Image, Picture } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import HizmetKarti from '../components/HizmetKarti.astro';
+import IletisimBolumu from '../components/IletisimBolumu.astro';
+import Sss from '../components/Sss.astro';
+import hero from '../assets/img/anasayfa-hero.jpg';
+import dokuLacivert from '../assets/img/doku-lacivert.jpg';
+import dokuTurkuaz from '../assets/img/doku-turkuaz.jpg';
+import { site, tecrubeYili, kategoriSirasi, kategoriBaslik } from '../data/site';
+import { isletmeSchema, sssSchema } from '../data/schema';
+
+const hizmetler = await getCollection('hizmetler');
+const oneCikan = ['norolojik-rehabilitasyon', 'pediatrik-rehabilitasyon', 'ortopedik-rehabilitasyon', 'pulmoner-rehabilitasyon', 'skolyoz-tedavisi', 'kuru-igneleme']
+  .map((id) => hizmetler.find((h) => h.id === id)!)
+  .filter(Boolean);
+const kategoriler = kategoriSirasi.map((k) => ({
+  ad: kategoriBaslik[k],
+  liste: hizmetler.filter((h) => h.data.kategori === k).sort((a, b) => a.data.baslik.localeCompare(b.data.baslik, 'tr')),
+}));
+const uzmanlar = (await getCollection('uzmanlar')).sort((a, b) => a.data.sira - b.data.sira);
+
+const nedenler = [
+  { baslik: 'Deneyim', metin: `Bia Sağlık, ${site.kurulusYili} yılından bu yana evde fizik tedavi alanında hizmet veriyor. Alanında uzman kadrosuyla hastalarına kaliteli hizmet sunar.` },
+  { baslik: 'Konfor', metin: 'Tedavi kendi evinizde yapılır. Yol, trafik ve bekleme salonu yoktur; iyileşme sürecinizi evinizin rahatlığında sürdürürsünüz.' },
+  { baslik: 'Erişim kolaylığı', metin: "İstanbul'un her noktasına geniş hizmet ağı ve mobil ekibimizle ulaşıyoruz. Bulunduğunuz bölgede zaman kaybetmeden tedaviye başlarsınız." },
+  { baslik: 'Kişiselleştirilmiş program', metin: 'Uzman fizyoterapistlerimizin hazırladığı size özel rehabilitasyon programlarıyla, ihtiyacınıza uygun bir tedavi planı uygulanır.' },
+];
+
+const yorumlar = [
+  { metin: 'Hizmetleri ve cihazları çok iyi ve profesyonel. Kolumda uyuşma vardı, parmaklarıma kadar hissediyordum. Boyun fıtığı teşhisiyle başvurdum. 8 günde iyileştim, teşekkür ederim Esma hoca.', ad: 'Yağmur Kaplan' },
+  { metin: 'Röntgen sonucu gördüğüm kamburluktan (kifoz) şikâyetçiydim. Hocalarım sağ olsun çok yardımcı oldular. Emeklerine sağlık.', ad: 'Barkın Bozkurt' },
+  { metin: "Tibia plato üst uç kırığı yaşadım, İrfan hocamla fizik tedaviye başladık. İrfan hocamın tedavisi çok iyi geldi. Bia Sağlık'a ve İrfan hocama çok teşekkür ederim. Herkese tavsiye ederim.", ad: 'Nezat Susmuş' },
+];
+
+const sss = [
+  { soru: 'Evde fizik tedavi nasıl işler?', cevap: 'Bizi aradığınızda fizyoterapistimiz evinize gelir ve ücretsiz ilk değerlendirmeyi yapar. Şikâyetinize ve hedeflerinize göre size özel bir program hazırlanır; seanslar gerekli ekipmanlarla kendi evinizde uygulanır ve ilerlemeniz düzenli olarak takip edilir.' },
+  { soru: "İstanbul'un hangi bölgelerine hizmet veriyorsunuz?", cevap: "Geniş hizmet ağımız ve mobil ekibimizle İstanbul'un her noktasına ulaşıyoruz. Bulunduğunuz bölge için uygun gün ve saati telefonla ya da WhatsApp üzerinden birlikte planlarız." },
+  { soru: 'İlk muayene ücretli mi?', cevap: 'Hayır. İlk değerlendirme ücretsizdir. Bu görüşmede fizyoterapistimiz durumunuzu inceler, evde fizik tedavinin size uygun olup olmadığını ve kaç seans gerekebileceğini söyler.' },
+  { soru: 'Hangi durumlarda evde fizik tedavi tercih edilir?', cevap: 'İnme (felç) sonrası, ameliyat veya kırık sonrası, yoğun bakım sonrası, ileri yaş, kronik ağrı, nörolojik hastalıklar ve çocuk rehabilitasyonu gibi dışarı çıkmanın zor olduğu ya da evde tedavinin daha konforlu olacağı her durumda tercih edilir.' },
+  { soru: 'Çalışma saatleriniz nedir?', cevap: `${site.calismaSaatleri} saatleri arasında hizmet veriyoruz. Pazar günleri kapalıyız.` },
+];
+
+const schema = [
+  isletmeSchema(),
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: site.ad, url: site.url, inLanguage: 'tr-TR' },
+  sssSchema(sss),
+];
+---
+<Base
+  baslik="Evde Fizik Tedavi İstanbul | Bia Sağlık"
+  aciklama={`İstanbul'da evde fizik tedavi ve rehabilitasyon. ${site.kurulusYili}'dan beri uzman fizyoterapistlerle evinizde tedavi. Ücretsiz ilk muayene için arayın.`}
+  schema={schema}
+>
+  <section class="hero">
+    <Picture
+      src={hero}
+      alt="Fizyoterapist, evinde yaşlı bir hastaya dambılla egzersiz yaptırıyor"
+      formats={['avif', 'webp']}
+      widths={[480, 800, 1200, 1600, 1920]}
+      sizes="100vw"
+      quality={60}
+      loading="eager"
+      fetchpriority="high"
+      class="hero-gorsel"
+    />
+    <div class="kap hero-ic">
+      <h1>İstanbul'da Evde Fizik Tedavi</h1>
+      <div class="serit-kisa" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="hero-metin">Bia Sağlık olarak, evde fizik tedavi hizmetiyle sağlığınıza evinizin konforunda kavuşmanızı sağlıyoruz. Uzman ekibimiz, size özel tedavi planlarıyla iyileşme sürecinizi destekliyor.</p>
+      <div class="hero-btn">
+        <a href="/iletisim#randevu" class="btn btn-turkuaz">Ücretsiz İlk Muayene</a>
+        <a href={site.telefonLink} class="btn btn-beyaz">{site.telefon}</a>
+      </div>
+    </div>
+    <ul class="kap hero-kutular">
+      <li><span>Uzman</span> <strong>Terapistler</strong></li>
+      <li><span>Kişiselleştirilmiş</span> <strong>Programlar</strong></li>
+      <li><span>Evde</span> <strong>Fizik Tedavi</strong></li>
+    </ul>
+  </section>
+
+  <section class="bolum">
+    <div class="kap dar ortala">
+      <h2 class="baslik-kare">Hakkımızda</h2>
+      <p class="hakkinda-metin">Bia Sağlık, {site.kurulusYili}'dan beri evde fizik tedavi hizmeti veriyor. Misyonumuz, hastalarımızın konforunu ve iyileşme süreçlerini ön planda tutarak evlerinde en etkili tedaviyi almalarını sağlamak. İstanbul'un her noktasına geniş hizmet ağımız ve mobil ekibimizle ulaşıyoruz. Amacımız, hastalarımızın sağlık sorunlarıyla mücadele ederken aileleriyle birlikte, konforlu bir ortamda tedavi almalarını sağlamak.</p>
+      <a href="/hakkimizda" class="btn btn-turkuaz">Daha fazlası için</a>
+    </div>
+  </section>
+
+  <section class="bolum hizmetler" id="hizmetlerimiz">
+    <Image src={dokuLacivert} alt="" width={1440} widths={[720, 1440]} sizes="100vw" quality={35} loading="lazy" class="arka" />
+    <div class="kap on">
+      <h2 class="baslik-kare beyaz">Hizmetlerimiz</h2>
+      <div class="izgara">
+        {oneCikan.map((h) => <HizmetKarti hizmet={h} />)}
+      </div>
+      <div class="tum-hizmetler">
+        {kategoriler.map((k) => (
+          <div>
+            <h3>{k.ad}</h3>
+            <ul>{k.liste.map((h) => <li><a href={`/${h.id}`}>{h.data.baslik}</a></li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sayilar" aria-label="Rakamlarla Bia Sağlık">
+    <ul class="kap">
+      <li><strong>{tecrubeYili}</strong><span>Yıllık tecrübe</span></li>
+      <li><strong>1500+</strong><span>Mutlu hasta</span></li>
+      <li><strong>18+</strong><span>Sertifika</span></li>
+      <li><strong>6</strong><span>Uzman terapist</span></li>
+    </ul>
+  </section>
+
+  <section class="bolum neden">
+    <Image src={dokuTurkuaz} alt="" width={1440} widths={[720, 1440]} sizes="100vw" quality={35} loading="lazy" class="arka" />
+    <div class="kap on">
+      <h2 class="baslik-kare beyaz">Neden Bia Sağlık?</h2>
+      <ul class="neden-liste">
+        {nedenler.map((n) => <li><h3>{n.baslik}</h3><p>{n.metin}</p></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="bolum">
+    <div class="kap">
+      <h2 class="baslik-kare">Uzmanlarımız</h2>
+      <ul class="uzmanlar">
+        {uzmanlar.map((u) => (
+          <li>
+            <Image src={u.data.foto} alt={`${u.data.ad}, ${u.data.unvan}`} width={220} densities={[1, 2]} loading="lazy" />
+            <h3>{u.data.ad}</h3>
+            <p>{u.data.unvan}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="bolum yorumlar">
+    <div class="kap">
+      <h2 class="baslik-kare beyaz">Mutlu Misafirlerimiz</h2>
+      <ul>
+        {yorumlar.map((y) => (
+          <li><blockquote><p>{y.metin}</p></blockquote><p class="yorum-ad">{y.ad}</p></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <Sss sss={sss} baslik="Evde fizik tedavi hakkında sık sorulanlar" />
+
+  <IletisimBolumu />
+</Base>
+
+<style>
+  .hero { position: relative; color: #fff; background: var(--indigo); overflow: hidden; }
+  .hero :global(.hero-gorsel) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 30%; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgb(73 82 160 / .88), rgb(81 93 172 / .62) 60%, rgb(81 93 172 / .35)); z-index: 1; }
+  .hero-ic { position: relative; z-index: 2; padding-block: clamp(56px, 11vw, 130px) clamp(36px, 6vw, 60px); }
+  .hero h1 { color: #fff; max-width: 14ch; letter-spacing: .01em; }
+  .hero-metin { max-width: 560px; font-size: clamp(1.02rem, 2vw, 1.2rem); }
+  .hero-btn { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .hero-kutular { position: relative; z-index: 2; list-style: none; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); padding-inline: 20px; }
+  .hero-kutular li { display: flex; flex-direction: column; justify-content: center; text-align: center; min-height: clamp(96px, 16vw, 170px); padding: 12px 6px; font: 400 clamp(.78rem, 2.2vw, 1.3rem)/1.25 var(--baslik-font); letter-spacing: .04em; text-transform: uppercase; }
+  .hero-kutular strong { font-weight: 700; }
+  .hero-kutular li:nth-child(1) { background: rgb(81 93 172 / .92); }
+  .hero-kutular li:nth-child(2) { background: rgb(25 144 206 / .9); }
+  .hero-kutular li:nth-child(3) { background: rgb(64 74 120 / .95); }
+
+  .hakkinda-metin { text-align: left; margin: 28px 0; }
+
+  .arka { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .on { position: relative; }
+  .hizmetler { position: relative; background: #0d2466; overflow: hidden; }
+  .hizmetler h2 { margin-bottom: 40px; }
+  .tum-hizmetler { margin-top: 44px; display: grid; gap: 22px 32px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); color: #fff; }
+  .tum-hizmetler h3 { color: var(--turkuaz); font-size: 1.05rem; margin-bottom: 8px; }
+  .tum-hizmetler ul { list-style: none; margin: 0; padding: 0; }
+  .tum-hizmetler a { color: #fff; text-decoration: none; display: inline-block; padding: 5px 0; font-size: .95rem; }
+  .tum-hizmetler a:hover { color: var(--turkuaz); text-decoration: underline; }
+
+  .sayilar ul { list-style: none; margin: 0 auto; padding-block: 34px; display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: 12px; }
+  .sayilar strong { display: block; font: 700 clamp(2rem, 6vw, 3.2rem)/1.1 var(--baslik-font); color: var(--lacivert); }
+  .sayilar span { font-size: clamp(.8rem, 2vw, .95rem); color: #222; }
+
+  .neden { position: relative; background: #0d5a78; color: #fff; overflow: hidden; }
+  .neden::before { content: ''; position: absolute; inset: 0; background: rgb(8 72 100 / .55); z-index: 1; }
+  .neden .on { z-index: 2; }
+  .neden-liste { list-style: none; padding: 0; margin: 40px 0 0; display: grid; gap: 34px 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); text-align: center; }
+  .neden h3 { color: #fff; font-size: 1.35rem; }
+  .neden-liste p { margin: 0; opacity: .95; }
+
+  .uzmanlar { list-style: none; padding: 0; margin: 40px 0 0; display: grid; gap: 36px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center; }
+  .uzmanlar img { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; margin: 0 auto 14px; object-position: top; }
+  .uzmanlar h3 { color: var(--indigo); font-size: 1.5rem; margin-bottom: 2px; }
+  .uzmanlar p { font: 700 1rem var(--baslik-font); color: #222; margin: 0; }
+
+  .yorumlar { background: var(--lacivert); color: #fff; }
+  .yorumlar ul { list-style: none; padding: 0; margin: 40px 0 0; display: grid; gap: 34px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); text-align: center; }
+  .yorumlar blockquote { margin: 0; }
+  .yorumlar blockquote::before { content: '”'; display: block; font: 700 4rem/0.9 var(--baslik-font); color: var(--mint); height: 40px; }
+  .yorumlar blockquote p { font-style: italic; font-size: .96rem; }
+  .yorum-ad { font-size: .88rem; opacity: .8; }
+
+  @media (max-width: 599px) {
+    .sayilar ul { grid-template-columns: repeat(2, 1fr); row-gap: 22px; }
+    .hero-kutular { padding-inline: 0; }
+  }
+</style>

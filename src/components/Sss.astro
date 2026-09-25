@@ -1,0 +1,27 @@
+---
+// Sık sorulan sorular: saf HTML <details>, JS yok. FAQPage schema sayfada ayrıca basılır.
+interface Props { sss: { soru: string; cevap: string }[]; baslik?: string; ust?: string }
+const { sss, baslik = 'Sıkça sorulan sorular', ust = 'Merak edilenler' } = Astro.props;
+---
+<section class="bolum sss" id="sss">
+  <div class="kap dar">
+    <p class="ust-etiket">{ust}</p>
+    <h2>{baslik}</h2>
+    {sss.map((s, i) => (
+      <details open={i === 0}>
+        <summary><h3>{s.soru}</h3></summary>
+        <p>{s.cevap}</p>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  .sss details { border-bottom: 1px solid var(--cizgi); }
+  .sss summary { list-style: none; cursor: pointer; padding: 18px 40px 18px 0; position: relative; }
+  .sss summary::-webkit-details-marker { display: none; }
+  .sss summary::after { content: '+'; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font: 700 1.6rem var(--baslik-font); color: var(--mavi); }
+  .sss details[open] summary::after { content: '−'; }
+  .sss h3 { margin: 0; font-size: 1.08rem; color: var(--lacivert); }
+  .sss details p { padding: 0 0 18px; margin: 0; }
+</style>

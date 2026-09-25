@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import SayfaBasi from '../components/SayfaBasi.astro';
+import IletisimBolumu from '../components/IletisimBolumu.astro';
+import { site } from '../data/site';
+import { breadcrumbSchema, isletmeSchema } from '../data/schema';
+---
+<Base
+  baslik="İletişim ve Randevu | Bia Sağlık"
+  aciklama={`Evde fizik tedavi randevusu için Bia Sağlık'ı arayın: ${site.telefon}. Bahçelievler, İstanbul. ${site.calismaSaatleri}. Ücretsiz ilk muayene.`}
+  schema={[isletmeSchema(), breadcrumbSchema([{ ad: 'Anasayfa', url: '/' }, { ad: 'İletişim', url: '/iletisim' }])]}
+>
+  <SayfaBasi baslik="İletişim ve Randevu" ust="Bize ulaşın">
+    <p>Sağlığınız için ilk adımı atın. Sorularınız, önerileriniz veya randevu talepleriniz için bizi telefonla arayabilir, WhatsApp'tan yazabilir ya da aşağıdaki formu doldurabilirsiniz. İlk değerlendirme ücretsizdir.</p>
+  </SayfaBasi>
+  <IletisimBolumu baslik="Randevu talebi" />
+</Base>

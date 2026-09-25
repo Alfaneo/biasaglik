@@ -1,0 +1,18 @@
+---
+import Ikon from './Ikon.astro';
+import { site } from '../data/site';
+---
+<a href={site.telefonLink} class="sabit sabit-tel" aria-label={`Telefonla arayın: ${site.telefon}`}><Ikon ad="telefon" boyut={26} /></a>
+<a href={site.whatsapp} class="sabit sabit-wa" rel="noopener" target="_blank" aria-label="WhatsApp ile yazın"><Ikon ad="whatsapp" boyut={28} /></a>
+
+<style>
+  .sabit {
+    position: fixed; bottom: 18px; z-index: 30;
+    width: 54px; height: 54px; border-radius: 50%;
+    display: grid; place-items: center; color: #fff;
+    box-shadow: 0 4px 14px rgb(0 0 0 / .25);
+  }
+  .sabit:hover { color: #fff; transform: scale(1.05); }
+  .sabit-tel { left: 18px; background: var(--indigo); }
+  .sabit-wa { right: 18px; background: #157a3e; }
+</style>

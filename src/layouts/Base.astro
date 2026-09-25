@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SabitButonlar from '../components/SabitButonlar.astro';
+import varsayilanOg from '../assets/img/anasayfa-hero.jpg';
+import exoLatin from '../assets/fonts/exo-latin-700-normal.woff2?url';
+import exoLatinExt from '../assets/fonts/exo-latin-ext-700-normal.woff2?url';
+import { site } from '../data/site';
+
+interface Props {
+  baslik: string;
+  aciklama: string;
+  ogGorsel?: ImageMetadata;
+  schema?: Record<string, unknown>[];
+  noindex?: boolean;
+}
+const { baslik, aciklama, ogGorsel = varsayilanOg, schema = [], noindex = false } = Astro.props;
+
+const kanonik = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/') || '/', site.url).href;
+const og = await getImage({ src: ogGorsel, width: 1200, height: 630, fit: 'cover', format: 'jpg', quality: 75 });
+const ogUrl = new URL(og.src, site.url).href;
+---
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{baslik}</title>
+    <meta name="description" content={aciklama} />
+    <link rel="canonical" href={kanonik} />
+    <link rel="preload" href={exoLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={exoLatinExt} as="font" type="font/woff2" crossorigin />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#273272" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content={site.ad} />
+    <meta property="og:title" content={baslik} />
+    <meta property="og:description" content={aciklama} />
+    <meta property="og:url" content={kanonik} />
+    <meta property="og:image" content={ogUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+  </head>
+  <body>
+    <a href="#icerik" class="gizli">İçeriğe geç</a>
+    <Header />
+    <main id="icerik">
+      <slot />
+    </main>
+    <Footer />
+    <SabitButonlar />
+  </body>
+</html>

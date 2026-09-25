@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import doku from '../assets/img/doku-lacivert.jpg';
+import ikonUzman from '../assets/img/ikon-uzman.png';
+import ikonRozet from '../assets/img/ikon-rozet.png';
+import ikonEv from '../assets/img/ikon-ev.png';
+
+const ogeler = [
+  { ikon: ikonUzman, metin: 'Uzman Terapistler' },
+  { ikon: ikonRozet, metin: 'Kişiselleştirilmiş Programlar' },
+  { ikon: ikonEv, metin: 'Evde Fizik Tedavi' },
+];
+---
+<section class="ikon-serit" aria-label="Neden Bia Sağlık">
+  <Image src={doku} alt="" width={1440} widths={[720, 1440]} sizes="100vw" quality={35} class="ikon-serit-arka" loading="lazy" />
+  <ul class="kap">
+    {ogeler.map((o) => (
+      <li>
+        <Image src={o.ikon} alt="" width={84} densities={[1, 2]} loading="lazy" />
+        <span>{o.metin}</span>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .ikon-serit { position: relative; background: #13307a; color: #fff; overflow: hidden; }
+  .ikon-serit-arka { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .ikon-serit ul { position: relative; list-style: none; margin: 0 auto; padding-block: 36px; display: grid; gap: 28px; grid-template-columns: repeat(3, 1fr); text-align: center; }
+  .ikon-serit li { display: flex; flex-direction: column; align-items: center; gap: 12px; font: 700 clamp(.9rem, 2.2vw, 1.1rem)/1.3 var(--baslik-font); }
+  .ikon-serit li img { width: clamp(56px, 10vw, 84px); height: auto; }
+</style>

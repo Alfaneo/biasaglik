@@ -1,0 +1,28 @@
+---
+import Ikon from './Ikon.astro';
+import { site } from '../data/site';
+interface Props { baslik?: string; metin?: string }
+const {
+  baslik = 'Ücretsiz ilk muayene için bize ulaşın',
+  metin = 'Fizyoterapistimiz evinize gelir, durumunuzu değerlendirir ve size özel bir tedavi programı çıkarır. İlk değerlendirme ücretsizdir.',
+} = Astro.props;
+---
+<section class="randevu" id="randevu-cta">
+  <div class="kap dar ortala">
+    <p class="ust-etiket beyaz">Randevu</p>
+    <h2>{baslik}</h2>
+    <p>{metin}</p>
+    <div class="randevu-btn">
+      <a class="btn btn-beyaz" href={site.telefonLink}><Ikon ad="telefon" /> {site.telefon}</a>
+      <a class="btn btn-wa" href={site.whatsapp} rel="noopener" target="_blank"><Ikon ad="whatsapp" /> WhatsApp'tan yazın</a>
+    </div>
+    <p class="randevu-saat">{site.calismaSaatleri}</p>
+  </div>
+</section>
+
+<style>
+  .randevu { background: linear-gradient(120deg, var(--lacivert), var(--indigo)); color: #fff; padding-block: clamp(48px, 7vw, 80px); }
+  .randevu h2 { color: #fff; }
+  .randevu-btn { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 26px 0 14px; }
+  .randevu-saat { font-size: .9rem; opacity: .85; margin: 0; }
+</style>
